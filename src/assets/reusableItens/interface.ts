@@ -10,10 +10,11 @@ export interface TextProps {
     | 'texting7';
 
   color?: string;
-
   weight?: 800 | 700 | 600 | 500 | 400 | 300 | number;
-
   size?: string;
+  mw?: string;
+  align?: 'right' | 'left' | 'center';
+  transform?: 'uppercase' | 'lowercase';
 }
 
 export interface SpanProps {

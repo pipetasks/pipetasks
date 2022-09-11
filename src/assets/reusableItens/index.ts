@@ -18,6 +18,12 @@ export const Text = styled.h1<TextProps>`
       : '1rem'};
 
   color: ${props => (props.color ? props.color : 'var(--black-900)')};
+
+  text-transform: ${props => props.transform ?? props.transform};
+
+  text-align: ${props => (props.align ? props.align : 'center')};
+
+  max-width: ${props => props.mw ?? props.mw};
 `;
 
 export const Span = styled.span<SpanProps>`

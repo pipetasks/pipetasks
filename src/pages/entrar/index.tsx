@@ -50,12 +50,14 @@ const Login = (): LoginProps => {
           <img src="Logo" alt="Logo" />
           <ContainerColumn gap="1rem" align="center">
             <Text variant="texting2">Faça seu login</Text>
-            <Input name="email" type="email" placeholder="E-mail">
-              <HiOutlineMail />
-            </Input>
-            <Input name="password" type="password" placeholder="Senha">
-              <HiOutlineLockClosed />
-            </Input>
+            <ContainerColumn gap="1.5rem" align="center">
+              <Input name="email" type="email" placeholder="E-mail">
+                <HiOutlineMail />
+              </Input>
+              <Input name="password" type="password" placeholder="Senha">
+                <HiOutlineLockClosed />
+              </Input>
+            </ContainerColumn>
 
             <button>Entrar</button>
           </ContainerColumn>

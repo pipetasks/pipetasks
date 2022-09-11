@@ -4,7 +4,7 @@ export const ContainerInput = styled.label`
   display: flex;
   align-items: center;
   width: 21rem;
-
+  padding-bottom: 4px;
   border-bottom: solid 3px var(--black-800);
 
   svg {

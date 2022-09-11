@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import { Span, Text } from '../../assets/reusableItens';
-import CompInput from '../../components/CompInput';
+import Input from '../../components/Input';
 
 interface LoginProps {}
 
@@ -49,8 +50,13 @@ const Login = (): LoginProps => {
           <img src="Logo" alt="Logo" />
           <ContainerColumn gap="1rem" align="center">
             <Text variant="texting2">Faça seu login</Text>
-            <CompInput />
-            <input type="text" placeholder="Senha" />
+            <Input name="email" type="email" placeholder="E-mail">
+              <HiOutlineMail />
+            </Input>
+            <Input name="password" type="password" placeholder="Senha">
+              <HiOutlineLockClosed />
+            </Input>
+
             <button>Entrar</button>
           </ContainerColumn>
 

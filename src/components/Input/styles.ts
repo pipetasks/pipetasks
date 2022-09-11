@@ -7,6 +7,11 @@ export const ContainerInput = styled.label`
 
   border-bottom: solid 3px var(--black-800);
 
+  svg {
+    color: var(--black-800);
+    font-size: 1.125rem;
+  }
+
   input {
     border: 0 none;
 

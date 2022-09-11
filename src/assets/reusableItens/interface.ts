@@ -15,3 +15,19 @@ export interface TextProps {
 
   size?: string;
 }
+
+export interface SpanProps {
+  color?: string;
+  weight?: number;
+  variant?:
+    | 'texting1'
+    | 'texting2'
+    | 'texting3'
+    | 'texting4'
+    | 'texting5'
+    | 'texting6'
+    | 'texting8'
+    | 'texting7';
+
+  size?: string;
+}

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { variants } from './constants';
-import { TextProps } from './interface';
+import { SpanProps, TextProps } from './interface';
 
 export const Text = styled.h1<TextProps>`
   font-weight: ${props =>
@@ -18,4 +18,24 @@ export const Text = styled.h1<TextProps>`
       : '1rem'};
 
   color: ${props => (props.color ? props.color : 'var(--black-900)')};
+`;
+
+export const Span = styled.span<SpanProps>`
+  color: ${props => (props.color ? props.color : 'var(--blue)')};
+
+  font-weight: ${props =>
+    props.variant
+      ? variants[props.variant].weight
+      : props.weight
+      ? props.weight
+      : 800};
+
+  font-size: ${props =>
+    props.variant
+      ? variants[props.variant].size
+      : props.size
+      ? props.size
+      : '1rem'};
+
+  font-family: inherit;
 `;

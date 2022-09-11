@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import { Span, Text } from '../../assets/reusableItens';
+import CompInput from '../../components/CompInput';
 
 interface LoginProps {}
 
@@ -48,7 +49,7 @@ const Login = (): LoginProps => {
           <img src="Logo" alt="Logo" />
           <ContainerColumn gap="1rem" align="center">
             <Text variant="texting2">Faça seu login</Text>
-            <input type="text" placeholder="Email" />
+            <CompInput />
             <input type="text" placeholder="Senha" />
             <button>Entrar</button>
           </ContainerColumn>

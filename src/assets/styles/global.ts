@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme.colors.background}        ;
+    background: ${props => props.theme.colors.background};
   }
 
 `;

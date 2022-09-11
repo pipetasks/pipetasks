@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +13,10 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <section>Vitão bonitao</section>
+      <section>Criar uma página home</section>
+      <Link href="/login">
+        <button>Página de login</button>
+      </Link>
     </>
   );
 };

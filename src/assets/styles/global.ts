@@ -2,7 +2,18 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-              --blue: #0f45a123
+    --blue: #395bfc;
+    --black-900: #1e1f25;
+    --black-800: #2d2d2d;
+    --gray-900: #656d79;
+    --gray-800: #7a8699;
+    --gray-700: #98a2b2;
+    --gray-600: #b8bfcc;
+    --gray-400: #c7ced9;
+    --gray-200: #ebeef2;
+    --white-200: #ffffff;
+    --white-100: #f7f8fa;
+
   }
 
   * {

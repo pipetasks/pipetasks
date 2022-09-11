@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { variants } from './constants';
 import { TextProps } from './interface';
 
-export const Text = styled.p<TextProps>`
+export const Text = styled.h1<TextProps>`
   font-weight: ${props =>
     props.variant
       ? variants[props.variant].weight
@@ -17,5 +17,5 @@ export const Text = styled.p<TextProps>`
       ? props.size
       : '1rem'};
 
-  color: ${props => (props.color ? props.color : 'var(--black-800)')};
+  color: ${props => (props.color ? props.color : 'var(--black-900)')};
 `;

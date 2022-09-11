@@ -1,37 +1,10 @@
 import Head from 'next/head';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
+import { Text } from '../../assets/reusableItens';
 
 interface LoginProps {}
 
 const Login = (): LoginProps => {
-  const variants = {
-    texting1: {
-      size: '2.25rem',
-      weight: 600,
-    },
-    texting2: {
-      size: '1.5rem',
-      weight: 400,
-    },
-    texting3: {
-      size: '1.5rem',
-      weight: 700,
-    },
-  };
-
-  const sizes = {
-    '48px': '3rem',
-    '36px': '2.25rem',
-    '26px': '1.625rem',
-    '24px': '1.5rem',
-    '20px': '1.25rem',
-    '16px': '1rem',
-    '12px': '0.75rem',
-    '10px': '0.625rem',
-  };
-
-  console.log(variants['texting1'].weight);
-
   return (
     <>
       <Head>
@@ -43,16 +16,16 @@ const Login = (): LoginProps => {
       </Head>
 
       <ContainerRow>
-        <ContainerColumn>
+        <ContainerColumn mw="53.625rem">
           <img src="" alt="Imagem" />
-          <h1>
+          <Text variant="texting1">
             Mantenha sua vida mais simples e gerencie as tarefas da sua equipe
-          </h1>
-          <h2>
+          </Text>
+          <Text variant="texting6" as="h3">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s
-          </h2>
+          </Text>
         </ContainerColumn>
 
         <ContainerColumn>

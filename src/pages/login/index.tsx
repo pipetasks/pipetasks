@@ -4,6 +4,34 @@ import { ContainerColumn, ContainerRow } from '../../assets/containers';
 interface LoginProps {}
 
 const Login = (): LoginProps => {
+  const variants = {
+    texting1: {
+      size: '2.25rem',
+      weight: 600,
+    },
+    texting2: {
+      size: '1.5rem',
+      weight: 400,
+    },
+    texting3: {
+      size: '1.5rem',
+      weight: 700,
+    },
+  };
+
+  const sizes = {
+    '48px': '3rem',
+    '36px': '2.25rem',
+    '26px': '1.625rem',
+    '24px': '1.5rem',
+    '20px': '1.25rem',
+    '16px': '1rem',
+    '12px': '0.75rem',
+    '10px': '0.625rem',
+  };
+
+  console.log(variants['texting1'].weight);
+
   return (
     <>
       <Head>

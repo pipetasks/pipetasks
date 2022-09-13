@@ -44,6 +44,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 
 ## ⚙️ Funcionalidades
 
+- [ ] Adicionar verificação do que foi digitado no input da página SignIn e SignUp;
 - [ ] Adicionar as imagens do Layout na aba de Layout do Github;
 - [ ] Adicionar link do repositório back end do Davi;
 

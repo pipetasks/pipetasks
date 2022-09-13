@@ -29,6 +29,8 @@ export const ContainerColumn = styled.div<ContainerProps>`
   border-radius: ${(props) => props.borderRadius ?? props.borderRadius};
   border-bottom: ${(props) => props.borderBottom ?? props.borderBottom};
   border-top: ${(props) => props.borderTop ?? props.borderTop};
+  border-right: ${(props) => props.borderRight ?? props.borderRight};
+  border-left: ${(props) => props.borderLeft ?? props.borderLeft};
 `;
 
 export const ContainerRow = styled.div<ContainerProps>`

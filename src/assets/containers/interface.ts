@@ -18,5 +18,7 @@ export interface ContainerProps {
   border?: string;
   borderTop?: string;
   borderBottom?: string;
+  borderRight?: string;
+  borderLeft?: string;
   borderRadius?: string;
 }

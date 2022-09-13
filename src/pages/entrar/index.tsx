@@ -4,20 +4,20 @@ import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import { Span, Text } from '../../assets/reusableItens';
 
-import { SubmitHandler, useForm, useFormState } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { Input } from '../../components/Input';
 
-interface LoginProps {}
-
-interface FormInputs {
+interface FormLoginInputs {
   email: string;
   password: string;
 }
 
-const Login = (): LoginProps => {
-  const { register, handleSubmit } = useForm<FormInputs>();
+const Login = () => {
+  const { register, handleSubmit } = useForm<FormLoginInputs>();
 
-  const onSubmit: SubmitHandler<FormInputs> = (data: FormInputs) => {
+  const handleSignIn: SubmitHandler<FormLoginInputs> = (
+    data: FormLoginInputs
+  ) => {
     console.log(data);
   };
 
@@ -67,7 +67,7 @@ const Login = (): LoginProps => {
               gap="1.5rem"
               align="center"
               as="form"
-              onSubmit={handleSubmit(onSubmit)}
+              onSubmit={handleSubmit(handleSignIn)}
             >
               <ContainerRow
                 width="21rem"

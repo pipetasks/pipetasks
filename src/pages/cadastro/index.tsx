@@ -1,11 +1,27 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import { Span, Text } from '../../assets/reusableItens';
+import { BsPerson } from 'react-icons/bs';
+import { Input } from '../../components/Input';
+import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 
-interface LoginProps {}
+interface FormRegisterInputs {
+  name: string;
+  email: string;
+  password: string;
+}
 
-const Login = (): LoginProps => {
+const SignUp = () => {
+  const { register, handleSubmit } = useForm<FormRegisterInputs>();
+
+  const handleSignUp: SubmitHandler<FormRegisterInputs> = (
+    data: FormRegisterInputs
+  ) => {
+    console.log(data);
+  };
+
   return (
     <>
       <Head>
@@ -27,10 +43,44 @@ const Login = (): LoginProps => {
           <img src="Logo" alt="Logo" />
           <ContainerColumn gap="1rem" align="center">
             <Text variant="texting2">Registre-se agora</Text>
-            <input type="text" placeholder="Nome" />
-            <input type="text" placeholder="Email" />
-            <input type="text" placeholder="Senha" />
-            <button>Registre-se</button>
+            <ContainerRow
+              width="21rem"
+              padding="0 0 0 4px"
+              borderBottom="solid 2px var(--black-800)"
+              align="center"
+              justify="space-between"
+            >
+              <Input type="text" placeholder="Nome" {...register('name')} />
+              <BsPerson color="var(--black-800)" font-size="1.125rem" />
+            </ContainerRow>
+            <ContainerRow
+              width="21rem"
+              padding="0 0 0 4px"
+              borderBottom="solid 2px var(--black-800)"
+              align="center"
+              justify="space-between"
+            >
+              <Input type="email" placeholder="E-mail" {...register('email')} />
+              <HiOutlineMail color="var(--black-800)" font-size="1.125rem" />
+            </ContainerRow>
+            <ContainerRow
+              width="21rem"
+              padding="0 0 0 4px"
+              borderBottom="solid 2px var(--black-800)"
+              align="center"
+              justify="space-between"
+            >
+              <Input
+                type="password"
+                placeholder="Senha"
+                {...register('password')}
+              />
+              <HiOutlineLockClosed
+                color="var(--black-800)"
+                font-size="1.125rem"
+              />
+            </ContainerRow>
+            <button type="submit">Registre-se</button>
           </ContainerColumn>
 
           <ContainerColumn align="center" gap="2rem">
@@ -75,4 +125,4 @@ const Login = (): LoginProps => {
   );
 };
 
-export default Login;
+export default SignUp;

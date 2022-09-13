@@ -3,11 +3,24 @@ import Link from 'next/link';
 import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import { Span, Text } from '../../assets/reusableItens';
-import Input from '../../components/Input';
+
+import { SubmitHandler, useForm, useFormState } from 'react-hook-form';
+import { Input } from '../../components/Input';
 
 interface LoginProps {}
 
+interface FormInputs {
+  email: string;
+  password: string;
+}
+
 const Login = (): LoginProps => {
+  const { register, handleSubmit } = useForm<FormInputs>();
+
+  const onSubmit: SubmitHandler<FormInputs> = (data: FormInputs) => {
+    console.log(data);
+  };
+
   return (
     <>
       <Head>
@@ -50,16 +63,45 @@ const Login = (): LoginProps => {
           <img src="Logo" alt="Logo" />
           <ContainerColumn gap="1rem" align="center">
             <Text variant="texting2">Faça seu login</Text>
-            <ContainerColumn gap="1.5rem" align="center">
-              <Input name="email" type="email" placeholder="E-mail">
-                <HiOutlineMail />
-              </Input>
-              <Input name="password" type="password" placeholder="Senha">
-                <HiOutlineLockClosed />
-              </Input>
+            <ContainerColumn
+              gap="1.5rem"
+              align="center"
+              as="form"
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <ContainerRow
+                width="21rem"
+                padding="0 0 0 4px"
+                borderBottom="solid 2px var(--black-800)"
+                align="center"
+                justify="space-between"
+              >
+                <Input
+                  type="email"
+                  placeholder="E-mail"
+                  {...register('email')}
+                />
+                <HiOutlineMail color="var(--black-800)" font-size="1.125rem" />
+              </ContainerRow>
+              <ContainerRow
+                width="21rem"
+                padding="0 0 0 4px"
+                borderBottom="solid 2px var(--black-800)"
+                align="center"
+                justify="space-between"
+              >
+                <Input
+                  type="password"
+                  placeholder="Senha"
+                  {...register('password')}
+                />
+                <HiOutlineLockClosed
+                  color="var(--black-800)"
+                  font-size="1.125rem"
+                />
+              </ContainerRow>
+              <button type="submit">Entrar</button>
             </ContainerColumn>
-
-            <button>Entrar</button>
           </ContainerColumn>
 
           <ContainerColumn align="center" gap="2rem">

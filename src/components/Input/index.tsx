@@ -1,14 +1,16 @@
-import { InputCompProps } from './interface';
+import { forwardRef, ForwardRefRenderFunction } from 'react';
+import { InputProps } from './interface';
 import { ContainerInput } from './styles';
 
-const Input = ({ name, children, ...rest }: InputCompProps) => {
-  console.log(rest);
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
+  { ...rest },
+  ref
+) => {
   return (
     <ContainerInput>
-      <input id={name} {...rest} />
-      {children}
+      <input {...rest} ref={ref} />
     </ContainerInput>
   );
 };
 
-export default Input;
+export const Input = forwardRef(InputBase);

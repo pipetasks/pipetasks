@@ -1,8 +1,5 @@
-import { InputHTMLAttributes, ReactElement } from 'react';
-
-export interface InputCompProps {
+export interface InputProps {
   name: string;
   type: string;
   placeholder: string;
-  children: ReactElement;
 }

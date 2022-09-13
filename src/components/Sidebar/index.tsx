@@ -3,6 +3,7 @@ import { Text } from '../../assets/reusableItens';
 import { MdMenuOpen } from 'react-icons/md';
 import { IoIosArrowUp } from 'react-icons/io';
 import { AiOutlineHome } from 'react-icons/ai';
+import Link from 'next/link';
 
 const Sidebar = () => {
   return (
@@ -81,17 +82,24 @@ const Sidebar = () => {
             <IoIosArrowUp fontSize="20px" color="var(--blue)" />
           </ContainerRow>
           <ContainerRow width="100%" align="center" justify="space-between">
-            <ContainerRow gap="8px" align="center">
-              <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
-              <Text color="var(--black-800)" variant="texting5">
-                Home
-              </Text>
-            </ContainerRow>
+            <Link href="/dashboard">
+              <a>
+                <ContainerRow gap="8px" align="center">
+                  <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
+                  <Text color="var(--black-800)" variant="texting5">
+                    Home
+                  </Text>
+                </ContainerRow>
+              </a>
+            </Link>
 
             <Text>1</Text>
           </ContainerRow>
         </ContainerColumn>
       </ContainerColumn>
+      <Link href="/configuracoes">
+        <a>Configuracoes</a>
+      </Link>
     </ContainerColumn>
   );
 };

@@ -50,8 +50,9 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] https://www.youtube.com/watch?v=ngVU74daJ8Y 23 minutos
 - [ ] Adicionar drawer na SideBar
 - [ ] Criar o componente NavSection, que vai ser cada section da sidebarv
-- [ ] Criar o componente NavHeader, que vai ser cada section da sidebarv
 - [ ] Criar o componente NavLink, que vai ser cada link da sidebar
+- [x] Criar o componente NavHeader, que vai ser cada section da sidebarv
+- [x] Criar o componente NavInfo, que vai ser cada info da sidebarv
 
 ## 🛠 Estrutura de pastas e componentes
 

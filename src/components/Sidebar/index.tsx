@@ -1,9 +1,10 @@
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import { Text } from '../../assets/reusableItens';
-import { MdMenuOpen } from 'react-icons/md';
 import { IoIosArrowUp } from 'react-icons/io';
 import { AiOutlineHome } from 'react-icons/ai';
 import Link from 'next/link';
+import HeaderNav from './HeaderNav';
+import NavInfo from './NavInfo';
 
 const Sidebar = () => {
   return (
@@ -15,20 +16,7 @@ const Sidebar = () => {
       height="100vh"
       width="21.563rem"
     >
-      <ContainerRow
-        as="header"
-        borderBottom="1px solid var(--gray-800)"
-        align="center"
-        justify="space-between"
-        padding="0 2rem"
-        width="100%"
-        height="5.438rem"
-      >
-        <Text color="var(--black-800)" variant="texting3">
-          Dashboard
-        </Text>
-        <MdMenuOpen color="var(--gray-800)" fontSize="1.5rem" />
-      </ContainerRow>
+      <HeaderNav />
 
       <ContainerColumn
         align="center"
@@ -36,29 +24,8 @@ const Sidebar = () => {
         padding="0 2rem"
         width="100%"
       >
-        <ContainerRow
-          justify="space-between"
-          padding="0 1rem"
-          width="100%"
-          borderBottom="solid 1px var(--gray-200)"
-          height="5.438rem"
-          align="center"
-        >
-          <ContainerRow
-            background="blue"
-            width="56px"
-            height="56px"
-            borderRadius="100%"
-          />
-          <ContainerColumn align="flex-start">
-            <Text variant="texting5" color="var(--black-800)">
-              Natalia Nunes
-            </Text>
-            <Text variant="texting7" color="var(--gray-600)">
-              Advogada
-            </Text>
-          </ContainerColumn>
-        </ContainerRow>
+        <NavInfo />
+
         <ContainerColumn
           align="flex-start"
           padding="2rem 1rem"

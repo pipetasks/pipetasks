@@ -48,6 +48,10 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] Adicionar as imagens do Layout na aba de Layout do Github;
 - [ ] Adicionar link do repositório back end do Davi;
 - [ ] https://www.youtube.com/watch?v=ngVU74daJ8Y 23 minutos
+- [ ] Adicionar drawer na SideBar
+- [ ] Criar o componente NavSection, que vai ser cada section da sidebarv
+- [ ] Criar o componente NavHeader, que vai ser cada section da sidebarv
+- [ ] Criar o componente NavLink, que vai ser cada link da sidebar
 
 ## 🛠 Estrutura de pastas e componentes
 

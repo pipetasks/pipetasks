@@ -6,9 +6,7 @@ import { useThemeContext } from '../../context/themeContext';
 interface SettingsProps {}
 
 const Settings = (): SettingsProps => {
-  const theme = useThemeContext();
-
-  console.log(theme);
+  const { theme, toggleTheme } = useThemeContext();
   return (
     <ContainerRow background="var(--white-100)">
       <Sidebar />

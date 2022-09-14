@@ -47,6 +47,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] Adicionar verificação do que foi digitado no input da página SignIn e SignUp;
 - [ ] Adicionar as imagens do Layout na aba de Layout do Github;
 - [ ] Adicionar link do repositório back end do Davi;
+- [ ] https://www.youtube.com/watch?v=ngVU74daJ8Y 23 minutos
 
 ## 🛠 Estrutura de pastas e componentes
 

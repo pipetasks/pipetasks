@@ -1,17 +1,28 @@
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
-import { Text } from '../../assets/reusableItens';
-import { MdMenuOpen } from 'react-icons/md';
-import { IoIosArrowUp } from 'react-icons/io';
-import { AiOutlineHome } from 'react-icons/ai';
 import Sidebar from '../../components/Sidebar';
+import Head from 'next/head';
+import { useTheme } from 'styled-components';
 
 interface DashboardProps {}
 
 const Dashboard = (): DashboardProps => {
+  const theme = useTheme();
+
+  console.log(theme);
+
   return (
-    <ContainerRow background="var(--white-100)">
-      <Sidebar />
-    </ContainerRow>
+    <>
+      <Head>
+        <title>Pipe Tasks - Dashboard</title>
+        <meta
+          name="description"
+          content="Adiucionar uma descrição maneira para a página home"
+        />
+      </Head>
+      <ContainerRow background={theme.colors.background}>
+        <Sidebar />
+      </ContainerRow>
+    </>
   );
 };
 

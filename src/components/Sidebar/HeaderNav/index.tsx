@@ -1,10 +1,12 @@
 import { ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
 import { MdMenuOpen } from 'react-icons/md';
+import { useTheme } from 'styled-components';
 
 interface HeaderNavProps {}
 
 const HeaderNav = ({}: HeaderNavProps) => {
+  const theme = useTheme();
   return (
     <ContainerRow
       as="header"
@@ -15,7 +17,7 @@ const HeaderNav = ({}: HeaderNavProps) => {
       width="100%"
       height="5.438rem"
     >
-      <Text color="var(--black-800)" variant="texting3">
+      <Text color={theme.colors.title} variant="texting3">
         Dashboard
       </Text>
       <MdMenuOpen color="var(--gray-800)" fontSize="1.5rem" />

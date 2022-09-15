@@ -5,6 +5,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import Link from 'next/link';
 import HeaderNav from './HeaderNav';
 import NavInfo from './NavInfo';
+import NavSection from './NavSection';
 
 const Sidebar = () => {
   return (
@@ -25,44 +26,7 @@ const Sidebar = () => {
         width="100%"
       >
         <NavInfo />
-
-        <ContainerColumn
-          align="flex-start"
-          padding="2rem 1rem"
-          gap="1.5rem"
-          borderBottom="solid 1px var(-gray-200)"
-          width="100%"
-        >
-          <ContainerRow
-            width="100%"
-            gap="4px"
-            align="center"
-            justify="space-between"
-          >
-            <Text
-              transform="uppercase"
-              variant="texting5"
-              color="var(--gray-900)"
-            >
-              dashboard
-            </Text>
-            <IoIosArrowUp fontSize="20px" color="var(--blue)" />
-          </ContainerRow>
-          <ContainerRow width="100%" align="center" justify="space-between">
-            <Link href="/dashboard">
-              <a>
-                <ContainerRow gap="8px" align="center">
-                  <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
-                  <Text color="var(--black-800)" variant="texting5">
-                    Home
-                  </Text>
-                </ContainerRow>
-              </a>
-            </Link>
-
-            <Text>1</Text>
-          </ContainerRow>
-        </ContainerColumn>
+        <NavSection />
       </ContainerColumn>
       <Link href="/configuracoes">
         <a>Configuracoes</a>

@@ -51,8 +51,8 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] Adicionar drawer na SideBar
 - [ ] Limitar a largura da SideBar
 - [x] Codar a página mobile das páginas de login
-- [ ] Codar a página mobile das páginas de login, e sign up
-- [ ] Criar o componente NavSection, que vai ser cada section da sidebarv
+- [x] Codar a página mobile das páginas de login, e sign up
+- [x] Criar o componente NavSection, que vai ser cada section da sidebarv
 - [ ] Criar o componente NavLink, que vai ser cada link da sidebar
 - [x] Criar o componente NavHeader, que vai ser cada section da sidebarv
 - [x] Criar o componente NavInfo, que vai ser cada info da sidebarv

@@ -6,6 +6,7 @@ import { Span, Text } from '../../assets/reusableItens';
 import { IoPersonOutline } from 'react-icons/io5';
 import { Input } from '../../components/Input';
 import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
+import { SignUpContainer, SignUpContent, SignUpHero } from './styles';
 
 interface FormRegisterInputs {
   name: string;
@@ -32,8 +33,8 @@ const SignUp = () => {
         />
       </Head>
 
-      <ContainerRow height="100vh" as="main">
-        <ContainerColumn
+      <SignUpContainer height="100vh" as="main">
+        <SignUpContent
           width="36.375rem"
           as="section"
           gap="2rem"
@@ -50,7 +51,7 @@ const SignUp = () => {
               onSubmit={handleSubmit(handleSignUp)}
             >
               <ContainerRow
-                width="21rem"
+                width="17.5rem"
                 padding="0 0 0 4px"
                 borderBottom="solid 2px var(--black-800)"
                 align="center"
@@ -63,7 +64,7 @@ const SignUp = () => {
                 />
               </ContainerRow>
               <ContainerRow
-                width="21rem"
+                width="17.5rem"
                 padding="0 0 0 4px"
                 borderBottom="solid 2px var(--black-800)"
                 align="center"
@@ -77,7 +78,7 @@ const SignUp = () => {
                 <HiOutlineMail color="var(--black-800)" font-size="1.125rem" />
               </ContainerRow>
               <ContainerRow
-                width="21rem"
+                width="17.5rem"
                 padding="0 0 0 4px"
                 borderBottom="solid 2px var(--black-800)"
                 align="center"
@@ -112,29 +113,10 @@ const SignUp = () => {
               </Link>
             </ContainerRow>
           </ContainerColumn>
-        </ContainerColumn>
+        </SignUpContent>
 
-        <ContainerColumn
-          as="section"
-          background="var(--gray-200)"
-          width="100%"
-          gap="3.5rem"
-          align="center"
-          justify="center"
-        >
-          <img src="" alt="Imagem" />
-          <ContainerColumn mw="32.68rem" gap="0.75rem" align="flex-end">
-            <Text variant="texting1" align="right">
-              Mantenha sua vida mais simples e gerencie as tarefas da sua equipe
-            </Text>
-            <Text variant="texting6" as="h3" align="right">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s
-            </Text>
-          </ContainerColumn>
-        </ContainerColumn>
-      </ContainerRow>
+        <SignUpHero as="section" width="100%" height="100%" />
+      </SignUpContainer>
     </>
   );
 };

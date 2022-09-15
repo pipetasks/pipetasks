@@ -1,24 +1,24 @@
 import styled from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 
-export const SignInContainer = styled(ContainerRow)`
+export const SignUpContainer = styled(ContainerRow)`
   @media (max-width: 650px) {
     flex-direction: column;
   }
 `;
 
-export const SignInHero = styled(ContainerRow)`
-  background: url('/SignIn.jpg'), #c7ced9;
+export const SignUpHero = styled(ContainerRow)`
+  background: url('/SignUp.jpg'), #c7ced9;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
 
   @media (max-width: 650px) {
     display: none;
   }
 `;
 
-export const SignInContent = styled(ContainerColumn)`
+export const SignUpContent = styled(ContainerColumn)`
   button {
     width: 16rem;
     height: 3.375rem;

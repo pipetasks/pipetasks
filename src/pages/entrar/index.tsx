@@ -33,14 +33,7 @@ const Login = () => {
       </Head>
 
       <SignInContainer height="100vh" as="main">
-        <SignInHero
-          as="section"
-          width="100%"
-          height="100%"
-          gap="3.5rem"
-          align="center"
-          justify="center"
-        />
+        <SignInHero as="section" width="100%" height="100%" />
 
         <SignInContent
           width="36.375rem"

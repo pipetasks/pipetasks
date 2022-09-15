@@ -29,10 +29,10 @@ const Task = ({}: TaskProps) => {
           <Text variant="texting6" color={theme.colors.title}>
             Nome da tarefa
           </Text>
-          <ContainerRow gap="8px">
+          <ContainerRow gap="8px" align="center">
             <BsCalendarWeek fontSize="0.75rem" color={theme.colors.subtitle} />
             <Text variant="texting7" color={theme.colors.subtitle}>
-              Data de inicio
+              01/06/2022
             </Text>
             <Text variant="texting7" color={theme.colors.subtitle}>
               |
@@ -50,10 +50,21 @@ const Task = ({}: TaskProps) => {
 
       <ContainerColumn justify="center" gap="8px">
         Colaboradores
+        <ContainerRow align="center" gap="8px">
+          <ContainerRow
+            width="32px"
+            height="32px"
+            background="blue"
+            borderRadius="100%"
+          />
+        </ContainerRow>
       </ContainerColumn>
 
       <ContainerColumn justify="center" gap="8px" align="flex-start">
         Data de vencimento
+        <Text variant="texting7" color={theme.colors.subtitle}>
+          12/12/2022
+        </Text>
       </ContainerColumn>
 
       <ContainerRow

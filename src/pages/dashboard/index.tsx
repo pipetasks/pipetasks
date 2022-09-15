@@ -5,13 +5,12 @@ import { useTheme } from 'styled-components';
 import Header from '../../components/Header';
 import TasksWeekly from '../../components/TasksWeekly';
 import { Text } from '../../assets/reusableItens';
+import ProjectsWeekly from '../../components/ProjectsWeekly';
 
 interface DashboardProps {}
 
 const Dashboard = (): DashboardProps => {
   const theme = useTheme();
-
-  console.log(theme);
 
   return (
     <>
@@ -39,6 +38,8 @@ const Dashboard = (): DashboardProps => {
             >
               <Text color={theme.colors.title}>Tarefas Concluídas</Text>
             </ContainerColumn>
+
+            <ProjectsWeekly />
           </ContainerColumn>
         </ContainerColumn>
       </ContainerRow>

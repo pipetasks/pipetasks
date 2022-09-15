@@ -4,6 +4,7 @@ import { IoIosArrowUp } from 'react-icons/io';
 import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
+import NavLink from '../NavLink';
 
 interface NavSectionProps {}
 
@@ -32,20 +33,9 @@ const NavSection = ({}: NavSectionProps) => {
         </Text>
         <IoIosArrowUp fontSize="20px" color="var(--blue)" />
       </ContainerRow>
-      <ContainerRow width="100%" align="center" justify="space-between">
-        <Link href="/dashboard">
-          <a>
-            <ContainerRow gap="8px" align="center">
-              <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
-              <Text color={theme.colors.title} variant="texting5">
-                Home
-              </Text>
-            </ContainerRow>
-          </a>
-        </Link>
-
-        <Text>1</Text>
-      </ContainerRow>
+      <NavLink />
+      <NavLink />
+      <NavLink />
     </ContainerColumn>
   );
 };

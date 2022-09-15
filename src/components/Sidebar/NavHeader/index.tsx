@@ -3,9 +3,9 @@ import { Text } from '../../../assets/reusableItens';
 import { MdMenuOpen } from 'react-icons/md';
 import { useTheme } from 'styled-components';
 
-interface HeaderNavProps {}
+interface NavHeaderProps {}
 
-const HeaderNav = ({}: HeaderNavProps) => {
+const NavHeader = ({}: NavHeaderProps) => {
   const theme = useTheme();
   return (
     <ContainerRow
@@ -25,4 +25,4 @@ const HeaderNav = ({}: HeaderNavProps) => {
   );
 };
 
-export default HeaderNav;
+export default NavHeader;

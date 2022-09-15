@@ -1,11 +1,9 @@
-import { ContainerColumn, ContainerRow } from '../../assets/containers';
-import { Text } from '../../assets/reusableItens';
-import { IoIosArrowUp } from 'react-icons/io';
-import { AiOutlineHome } from 'react-icons/ai';
+import { ContainerColumn } from '../../assets/containers';
+
 import Link from 'next/link';
-import HeaderNav from './HeaderNav';
 import NavInfo from './NavInfo';
 import NavSection from './NavSection';
+import NavHeader from './NavHeader';
 
 const Sidebar = () => {
   return (
@@ -17,7 +15,7 @@ const Sidebar = () => {
       height="100vh"
       width="21.563rem"
     >
-      <HeaderNav />
+      <NavHeader />
 
       <ContainerColumn
         align="center"

@@ -50,6 +50,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] https://www.youtube.com/watch?v=ngVU74daJ8Y 23 minutos
 - [ ] Adicionar drawer na SideBar
 - [ ] Limitar a largura da SideBar
+- [x] Codar a página mobile das páginas de login
 - [ ] Codar a página mobile das páginas de login, e sign up
 - [ ] Criar o componente NavSection, que vai ser cada section da sidebarv
 - [ ] Criar o componente NavLink, que vai ser cada link da sidebar
@@ -73,13 +74,13 @@ Afim de facilitar a organização e manutenção do código, foi definido um pad
 Todos os componentes criados vão seguir uma mesma estrutura de organização:
 → index.tsx: Responsável por exportar o componente; <br />
 → interface.ts: Responsável por exportar as interfaces; <br />
-→ style.ts: Responsável por toda estilização do componente; <br />
+→ styles.ts: Responsável por toda estilização do componente; <br />
 
 A pasta com as páginas vai seguir uma sequência lógica parecida com os demais componentes e estruturas
 → /components: Componentes que são utilizados apenas naquela páginas; <br />
 → index.tsx: Responsável por exportar a página; <br />
 → interface.ts: Responsável por exportar as interfaces que são utilizadas globalmente na página; <br />
-→ style.ts: Responsável por toda estilização da página; <br />
+→ styles.ts: Responsável por toda estilização da página; <br />
 
 ## 🎨 Design System
 

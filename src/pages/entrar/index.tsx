@@ -6,6 +6,7 @@ import { Span, Text } from '../../assets/reusableItens';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Input } from '../../components/Input';
+import { SignInContainer, SignInContent, SignInHero } from './styles';
 
 interface FormLoginInputs {
   email: string;
@@ -31,29 +32,17 @@ const Login = () => {
         />
       </Head>
 
-      <ContainerRow height="100vh" as="main">
-        <ContainerColumn
+      <SignInContainer height="100vh" as="main">
+        <SignInHero
           as="section"
-          background="var(--gray-400)"
           width="100%"
+          height="100%"
           gap="3.5rem"
           align="center"
           justify="center"
-        >
-          <img src="" alt="Imagem" />
-          <ContainerColumn mw="32.68rem" gap="0.75rem">
-            <Text variant="texting1" align="left">
-              Mantenha sua vida mais simples e gerencie as tarefas da sua equipe
-            </Text>
-            <Text variant="texting6" as="h3" align="left">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s
-            </Text>
-          </ContainerColumn>
-        </ContainerColumn>
+        />
 
-        <ContainerColumn
+        <SignInContent
           width="36.375rem"
           as="section"
           gap="2rem"
@@ -70,7 +59,7 @@ const Login = () => {
               onSubmit={handleSubmit(handleSignIn)}
             >
               <ContainerRow
-                width="21rem"
+                width="17.5rem"
                 padding="0 0 0 4px"
                 borderBottom="solid 2px var(--black-800)"
                 align="center"
@@ -84,7 +73,7 @@ const Login = () => {
                 <HiOutlineMail color="var(--black-800)" font-size="1.125rem" />
               </ContainerRow>
               <ContainerRow
-                width="21rem"
+                width="17.5rem"
                 padding="0 0 0 4px"
                 borderBottom="solid 2px var(--black-800)"
                 align="center"
@@ -119,8 +108,8 @@ const Login = () => {
               </Link>
             </ContainerRow>
           </ContainerColumn>
-        </ContainerColumn>
-      </ContainerRow>
+        </SignInContent>
+      </SignInContainer>
     </>
   );
 };

@@ -3,20 +3,17 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { useTheme } from 'styled-components';
 import { ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
+import { NavLinkProps } from './interface';
 
-interface NavLinkProps {
-  title: string;
-  notifications?: number;
-}
-
-const NavLink = ({ title, notifications }: NavLinkProps) => {
+const NavLink = ({ title, notifications, href, children }: NavLinkProps) => {
   const theme = useTheme();
   return (
     <ContainerRow width="100%" align="center" justify="space-between">
-      <Link href="/dashboard">
+      <Link href={href}>
         <a>
           <ContainerRow gap="8px" align="center">
-            <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
+            {/* <AiOutlineHome fontSize="1.5rem" color="var(--blue)" /> */}
+            {children}
             <Text color={theme.colors.title} variant="texting5">
               {title}
             </Text>

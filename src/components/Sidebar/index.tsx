@@ -4,6 +4,9 @@ import NavInfo from './NavInfo';
 import NavSection from './NavSection';
 import NavHeader from './NavHeader';
 import NavLink from './NavLink';
+import { AiOutlineHome, AiOutlinePieChart } from 'react-icons/ai';
+import { GoSettings } from 'react-icons/go';
+import { BsCheckAll } from 'react-icons/bs';
 
 const Sidebar = () => {
   const teste = 0;
@@ -25,15 +28,33 @@ const Sidebar = () => {
         width="100%"
       >
         <NavInfo />
+
         <NavSection title="dashboards">
-          <NavLink title="Home" notifications={1} />
-          <NavLink title="Analytics" notifications={12} />
-          <NavLink title="Configurações" notifications={teste} />
+          <NavLink title="Home" notifications={1} href="/dashboard">
+            <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
+          </NavLink>
+          <NavLink title="Analytics" notifications={12} href="/analytics">
+            <AiOutlinePieChart fontSize="1.5rem" color="var(--blue)" />
+          </NavLink>
+          <NavLink
+            title="Configurações"
+            notifications={teste}
+            href="/configuracoes"
+          >
+            <GoSettings fontSize="1.5rem" color="var(--blue)" rotate="180deg" />
+          </NavLink>
         </NavSection>
+
         <NavSection title="projetos">
-          <NavLink title="Analytics" notifications={12} />
-          <NavLink title="Analytics" notifications={12} />
-          <NavLink title="Analytics" notifications={12} />
+          <NavLink title="Analytics" notifications={12} href="/dashboard">
+            <BsCheckAll fontSize="1.5rem" color="var(--blue)" />
+          </NavLink>
+          <NavLink title="Analytics" notifications={12} href="/dashboard">
+            <BsCheckAll fontSize="1.5rem" color="var(--blue)" />
+          </NavLink>
+          <NavLink title="Analytics" notifications={12} href="/dashboard">
+            <BsCheckAll fontSize="1.5rem" color="var(--blue)" />
+          </NavLink>
         </NavSection>
       </ContainerColumn>
       <Link href="/configuracoes">

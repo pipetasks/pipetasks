@@ -2,6 +2,7 @@ import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import Sidebar from '../../components/Sidebar';
 import Head from 'next/head';
 import { useTheme } from 'styled-components';
+import Header from '../../components/Header';
 
 interface DashboardProps {}
 
@@ -21,6 +22,14 @@ const Dashboard = (): DashboardProps => {
       </Head>
       <ContainerRow background={theme.colors.background}>
         <Sidebar />
+        <ContainerColumn>
+          <Header />
+          <ContainerColumn
+            align="center"
+            padding="2rem"
+            gap="1rem"
+          ></ContainerColumn>
+        </ContainerColumn>
       </ContainerRow>
     </>
   );

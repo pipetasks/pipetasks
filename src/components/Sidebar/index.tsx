@@ -1,5 +1,4 @@
 import { ContainerColumn } from '../../assets/containers';
-import Link from 'next/link';
 import NavInfo from './NavInfo';
 import NavSection from './NavSection';
 import NavHeader from './NavHeader';
@@ -46,20 +45,17 @@ const Sidebar = () => {
         </NavSection>
 
         <NavSection title="projetos">
-          <NavLink title="Analytics" notifications={12} href="/dashboard">
+          <NavLink title="Projeto1" notifications={12} href="/dashboard">
             <BsCheckAll fontSize="1.5rem" color="var(--blue)" />
           </NavLink>
-          <NavLink title="Analytics" notifications={12} href="/dashboard">
+          <NavLink title="Projeto12" notifications={12} href="/dashboard">
             <BsCheckAll fontSize="1.5rem" color="var(--blue)" />
           </NavLink>
-          <NavLink title="Analytics" notifications={12} href="/dashboard">
+          <NavLink title="Projeto13" notifications={12} href="/dashboard">
             <BsCheckAll fontSize="1.5rem" color="var(--blue)" />
           </NavLink>
         </NavSection>
       </ContainerColumn>
-      <Link href="/configuracoes">
-        <a>Configuracoes</a>
-      </Link>
     </ContainerColumn>
   );
 };

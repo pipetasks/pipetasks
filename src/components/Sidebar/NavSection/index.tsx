@@ -1,4 +1,4 @@
-import { IoIosArrowUp } from 'react-icons/io';
+import { IoIosArrowDown } from 'react-icons/io';
 import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
@@ -6,6 +6,7 @@ import { NavSectionProps } from './interface';
 
 const NavSection = ({ title, children }: NavSectionProps) => {
   const theme = useTheme();
+
   return (
     <ContainerColumn
       align="flex-start"
@@ -15,6 +16,7 @@ const NavSection = ({ title, children }: NavSectionProps) => {
       width="100%"
     >
       <ContainerRow
+        as="header"
         width="100%"
         gap="4px"
         align="center"
@@ -27,7 +29,7 @@ const NavSection = ({ title, children }: NavSectionProps) => {
         >
           {title}
         </Text>
-        <IoIosArrowUp fontSize="20px" color="var(--blue)" />
+        <IoIosArrowDown fontSize="20px" color="var(--blue)" />
       </ContainerRow>
       {children}
     </ContainerColumn>

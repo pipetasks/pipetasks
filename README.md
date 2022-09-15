@@ -50,7 +50,6 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] https://www.youtube.com/watch?v=ngVU74daJ8Y 23 minutos
 - [ ] Adicionar drawer na SideBar
 - [ ] Limitar a largura da SideBar
-- [x] Criar o componente NavLink, que vai ser cada link da sidebar
 
 ## 🛠 Estrutura de pastas e componentes
 

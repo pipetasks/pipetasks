@@ -4,9 +4,12 @@ import { useTheme } from 'styled-components';
 import { ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
 
-interface NavLinkProps {}
+interface NavLinkProps {
+  title: string;
+  notifications?: number;
+}
 
-const NavLink = ({}: NavLinkProps) => {
+const NavLink = ({ title, notifications }: NavLinkProps) => {
   const theme = useTheme();
   return (
     <ContainerRow width="100%" align="center" justify="space-between">
@@ -15,7 +18,7 @@ const NavLink = ({}: NavLinkProps) => {
           <ContainerRow gap="8px" align="center">
             <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
             <Text color={theme.colors.title} variant="texting5">
-              Home
+              {title}
             </Text>
           </ContainerRow>
         </a>
@@ -30,7 +33,7 @@ const NavLink = ({}: NavLinkProps) => {
         background={theme.colors.notifications.background}
       >
         <Text variant="texting8" color={theme.colors.notifications.color}>
-          1
+          {notifications}
         </Text>
       </ContainerRow>
     </ContainerRow>

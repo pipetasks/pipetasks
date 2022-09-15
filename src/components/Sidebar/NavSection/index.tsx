@@ -1,14 +1,15 @@
-import Link from 'next/link';
-import { AiOutlineHome } from 'react-icons/ai';
+import { ReactNode } from 'react';
 import { IoIosArrowUp } from 'react-icons/io';
 import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
-import NavLink from '../NavLink';
 
-interface NavSectionProps {}
+interface NavSectionProps {
+  title: string;
+  children: ReactNode;
+}
 
-const NavSection = ({}: NavSectionProps) => {
+const NavSection = ({ title, children }: NavSectionProps) => {
   const theme = useTheme();
   return (
     <ContainerColumn
@@ -29,13 +30,11 @@ const NavSection = ({}: NavSectionProps) => {
           variant="texting5"
           color={theme.colors.subtitle}
         >
-          dashboard
+          {title}
         </Text>
         <IoIosArrowUp fontSize="20px" color="var(--blue)" />
       </ContainerRow>
-      <NavLink />
-      <NavLink />
-      <NavLink />
+      {children}
     </ContainerColumn>
   );
 };

@@ -1,11 +1,12 @@
 import { ContainerColumn } from '../../assets/containers';
-
 import Link from 'next/link';
 import NavInfo from './NavInfo';
 import NavSection from './NavSection';
 import NavHeader from './NavHeader';
+import NavLink from './NavLink';
 
 const Sidebar = () => {
+  const teste = 0;
   return (
     <ContainerColumn
       align="center"
@@ -24,7 +25,16 @@ const Sidebar = () => {
         width="100%"
       >
         <NavInfo />
-        <NavSection />
+        <NavSection title="dashboards">
+          <NavLink title="Home" notifications={1} />
+          <NavLink title="Analytics" notifications={12} />
+          <NavLink title="Configurações" notifications={teste} />
+        </NavSection>
+        <NavSection title="projetos">
+          <NavLink title="Analytics" notifications={12} />
+          <NavLink title="Analytics" notifications={12} />
+          <NavLink title="Analytics" notifications={12} />
+        </NavSection>
       </ContainerColumn>
       <Link href="/configuracoes">
         <a>Configuracoes</a>

@@ -49,6 +49,8 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] Adicionar link do repositório back end do Davi;
 - [ ] https://www.youtube.com/watch?v=ngVU74daJ8Y 23 minutos
 - [ ] Adicionar drawer na SideBar
+- [ ] Limitar a largura da SideBar
+- [ ] Codar a página mobile das páginas de login, e sign up
 - [ ] Criar o componente NavSection, que vai ser cada section da sidebarv
 - [ ] Criar o componente NavLink, que vai ser cada link da sidebar
 - [x] Criar o componente NavHeader, que vai ser cada section da sidebarv

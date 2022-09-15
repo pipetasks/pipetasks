@@ -6,8 +6,21 @@ declare module 'styled-components' {
 
     colors: {
       background: string;
-      textNumber: string;
-      neutral: string;
+      title: string;
+      subtitle: string;
+      notifications: {
+        background: string;
+        color: string;
+      };
+      input: {
+        background: string;
+        border: string;
+        color: string;
+      };
+      tasks: {
+        background: string;
+        color: string;
+      };
     };
   }
 }

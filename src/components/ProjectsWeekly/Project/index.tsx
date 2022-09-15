@@ -22,23 +22,23 @@ const Project = ({}: ProjectProps) => {
       <ContainerRow gap="1.5rem" align="center">
         <FaTasks color="var(--blue)" />
         <ContainerColumn justify="center" align="flex-start" gap="8px">
-          <Text variant="texting2" color={theme.colors.title}>
+          <Text variant="texting2" color={theme.colors.title} as="h2">
             Nome do projeto
           </Text>
 
           <ContainerRow gap="8px" align="center">
             <BsCalendarWeek fontSize="0.75rem" color={theme.colors.subtitle} />
-            <Text variant="texting7" color={theme.colors.subtitle}>
+            <Text variant="texting7" color={theme.colors.subtitle} as="p">
               01/06/2022
             </Text>
-            <Text variant="texting7" color={theme.colors.subtitle}>
+            <Text variant="texting7" color={theme.colors.subtitle} as="p">
               |
             </Text>
             <AiOutlineComment
               fontSize="0.75rem"
               color={theme.colors.subtitle}
             />
-            <Text variant="texting7" color={theme.colors.subtitle}>
+            <Text variant="texting7" color={theme.colors.subtitle} as="p">
               9 Comentários
             </Text>
           </ContainerRow>
@@ -50,12 +50,15 @@ const Project = ({}: ProjectProps) => {
         color={theme.colors.title}
         mw="13.125rem"
         align="left"
+        as="p"
       >
         Descriçao básica do projeto com um limite de caracteres
       </Text>
 
       <ContainerColumn justify="center" gap="8px">
-        Colaboradores
+        <Text variant="texting6" color={theme.colors.subtitle} as="p">
+          Colaboradores
+        </Text>
         <ContainerRow align="center" gap="8px">
           <ContainerRow
             width="32px"
@@ -67,7 +70,7 @@ const Project = ({}: ProjectProps) => {
       </ContainerColumn>
 
       <ContainerColumn align="flex-start" justify="center" gap="8px">
-        <Text variant="texting6" color={theme.colors.title}>
+        <Text variant="texting6" color={theme.colors.title} as="p">
           50% completo
         </Text>
         <progress value={50} max={100}>

@@ -20,10 +20,10 @@ const NavInfo = () => {
         borderRadius="100%"
       />
       <ContainerColumn align="flex-start">
-        <Text variant="texting5" color={theme.colors.title}>
+        <Text variant="texting5" color={theme.colors.title} as="h2">
           Natalia Nunes
         </Text>
-        <Text variant="texting7" color={theme.colors.subtitle}>
+        <Text variant="texting7" color={theme.colors.subtitle} as="h3">
           Advogada
         </Text>
       </ContainerColumn>

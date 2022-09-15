@@ -23,25 +23,25 @@ const Task = ({}: TaskProps) => {
       <ContainerRow gap="1.5rem" align="center">
         <FaTasks color="var(--blue)" />
         <ContainerColumn justify="center" align="flex-start" gap="8px">
-          <Text variant="texting2" color={theme.colors.title}>
+          <Text variant="texting2" color={theme.colors.title} as="h2">
             Nome do projeto
           </Text>
-          <Text variant="texting6" color={theme.colors.title}>
+          <Text variant="texting6" color={theme.colors.title} as="h3">
             Nome da tarefa
           </Text>
           <ContainerRow gap="8px" align="center">
             <BsCalendarWeek fontSize="0.75rem" color={theme.colors.subtitle} />
-            <Text variant="texting7" color={theme.colors.subtitle}>
+            <Text variant="texting7" color={theme.colors.subtitle} as="p">
               01/06/2022
             </Text>
-            <Text variant="texting7" color={theme.colors.subtitle}>
+            <Text variant="texting7" color={theme.colors.subtitle} as="p">
               |
             </Text>
             <AiOutlineComment
               fontSize="0.75rem"
               color={theme.colors.subtitle}
             />
-            <Text variant="texting7" color={theme.colors.subtitle}>
+            <Text variant="texting7" color={theme.colors.subtitle} as="p">
               9 Comentários
             </Text>
           </ContainerRow>
@@ -49,7 +49,9 @@ const Task = ({}: TaskProps) => {
       </ContainerRow>
 
       <ContainerColumn justify="center" gap="8px">
-        Colaboradores
+        <Text variant="texting6" color={theme.colors.subtitle} as="p">
+          Colaboradores
+        </Text>
         <ContainerRow align="center" gap="8px">
           <ContainerRow
             width="32px"
@@ -61,8 +63,10 @@ const Task = ({}: TaskProps) => {
       </ContainerColumn>
 
       <ContainerColumn justify="center" gap="8px" align="flex-start">
-        Data de vencimento
-        <Text variant="texting7" color={theme.colors.subtitle}>
+        <Text variant="texting6" color={theme.colors.subtitle} as="p">
+          Data de vencimento
+        </Text>
+        <Text variant="texting7" color={theme.colors.subtitle} as="p">
           12/12/2022
         </Text>
       </ContainerColumn>

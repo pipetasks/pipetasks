@@ -14,7 +14,7 @@ const NavLink = ({ title, notifications, href, children }: NavLinkProps) => {
           <ContainerRow gap="8px" align="center">
             {/* <AiOutlineHome fontSize="1.5rem" color="var(--blue)" /> */}
             {children}
-            <Text color={theme.colors.title} variant="texting5">
+            <Text color={theme.colors.title} variant="texting5" as="h3">
               {title}
             </Text>
           </ContainerRow>
@@ -29,7 +29,11 @@ const NavLink = ({ title, notifications, href, children }: NavLinkProps) => {
         borderRadius="100%"
         background={theme.colors.notifications.background}
       >
-        <Text variant="texting8" color={theme.colors.notifications.color}>
+        <Text
+          variant="texting8"
+          color={theme.colors.notifications.color}
+          as="p"
+        >
           {notifications}
         </Text>
       </ContainerRow>

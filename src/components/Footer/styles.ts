@@ -1,13 +1,13 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 
-export const SideBarContainer = styled(ContainerColumn)`
-  height: 100vh;
+export const SideFooterContainer = styled(ContainerRow)`
+  display: none;
+
   position: fixed;
-  width: 21.563rem;
+  bottom: 0;
 
   @media (max-width: 1120px) {
-    display: none;
+    display: flex;
   }
 `;

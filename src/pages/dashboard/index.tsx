@@ -6,6 +6,8 @@ import Header from '../../components/Header';
 import TasksWeekly from '../../components/TasksWeekly';
 import { Text } from '../../assets/reusableItens';
 import ProjectsWeekly from '../../components/ProjectsWeekly';
+import { DashboardContainer } from './styles';
+import Footer from '../../components/Footer';
 
 interface DashboardProps {}
 
@@ -23,7 +25,8 @@ const Dashboard = (): DashboardProps => {
       </Head>
       <ContainerRow background={theme.colors.background}>
         <Sidebar />
-        <ContainerColumn width="100%" padding="0 0 0 21.563rem">
+        <Footer />
+        <DashboardContainer width="100%" padding="0 0 0 21.563rem" as="main">
           <Header />
           <ContainerColumn align="center" padding="2rem" gap="1rem">
             <TasksWeekly />
@@ -41,7 +44,7 @@ const Dashboard = (): DashboardProps => {
 
             <ProjectsWeekly />
           </ContainerColumn>
-        </ContainerColumn>
+        </DashboardContainer>
       </ContainerRow>
     </>
   );

@@ -15,10 +15,14 @@ const Settings = (): SettingsProps => {
       <Head>
         <title>Pipe Tasks - Configurações</title>
       </Head>
-      <ContainerRow background={theme.colors.background} height="100%">
+      <ContainerRow
+        background={theme.colors.background}
+        height="100%"
+        width="100%"
+      >
         <Sidebar />
         <Footer />
-        <ContainerColumn width="100%" padding="0 0 0 21.563rem">
+        <ContainerColumn width="100%" padding="0 0 0 21.563rem" height="100%">
           <Header />
           <button onClick={toggleTheme}>alterar thema aqui </button>
           <h1>{theme.name}</h1>

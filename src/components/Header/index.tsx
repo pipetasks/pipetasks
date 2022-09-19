@@ -13,7 +13,7 @@ const Header = ({}: HeaderProps) => {
       borderBottom="solid 1px var(--gray-800)"
     >
       <input type="text" placeholder="Pesquise sua tarefa" />
-      <AiOutlineClose />
+      <AiOutlineClose color="var(--blue)" font-size="1.5rem" />
     </ContainerRow>
   );
 };

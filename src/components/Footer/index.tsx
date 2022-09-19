@@ -38,7 +38,7 @@ const Footer = () => {
       </ContainerRow>
       <AiOutlineMenu fontSize="1.5rem" color="var(--blue)" />
       <ContainerRow gap="0.75rem">
-        {theme.name === 'light' ? (
+        {theme.name === 'dark' ? (
           <MdOutlineLightMode
             fontSize="1.5rem"
             color="var(--blue)"

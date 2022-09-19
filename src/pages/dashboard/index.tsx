@@ -9,10 +9,9 @@ import ProjectsWeekly from '../../components/ProjectsWeekly';
 import { DashboardContainer } from './styles';
 import Footer from '../../components/Footer';
 import { useThemeContext } from '../../context/themeContext';
+import { NextPage } from 'next';
 
-interface DashboardProps {}
-
-const Dashboard = (): DashboardProps => {
+const Dashboard: NextPage = () => {
   const { theme } = useThemeContext();
 
   return (

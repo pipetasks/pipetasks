@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   AiOutlineHome,
   AiOutlineMenu,
@@ -5,7 +6,6 @@ import {
 } from 'react-icons/ai';
 import { GoSettings } from 'react-icons/go';
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
-import { useTheme } from 'styled-components';
 import { ContainerRow } from '../../assets/containers';
 import { useThemeContext } from '../../context/themeContext';
 import { SideFooterContainer } from './styles';
@@ -25,8 +25,16 @@ const Footer = () => {
       padding="0 2.5rem"
     >
       <ContainerRow gap="0.75rem">
-        <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
-        <AiOutlinePieChart fontSize="1.5rem" color="var(--blue)" />
+        <Link href="/dashboard">
+          <a>
+            <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
+          </a>
+        </Link>
+        <Link href="/analytics">
+          <a>
+            <AiOutlinePieChart fontSize="1.5rem" color="var(--blue)" />
+          </a>
+        </Link>
       </ContainerRow>
       <AiOutlineMenu fontSize="1.5rem" color="var(--blue)" />
       <ContainerRow gap="0.75rem">
@@ -44,7 +52,11 @@ const Footer = () => {
           />
         )}
 
-        <GoSettings fontSize="1.5rem" color="var(--blue)" />
+        <Link href="/configuracoes">
+          <a>
+            <GoSettings fontSize="1.5rem" color="var(--blue)" />
+          </a>
+        </Link>
       </ContainerRow>
     </SideFooterContainer>
   );

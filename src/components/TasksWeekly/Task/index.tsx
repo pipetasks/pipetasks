@@ -1,14 +1,14 @@
-import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../../assets/containers';
 import { FaTasks } from 'react-icons/fa';
 import { Text } from '../../../assets/reusableItens';
 import { BsCalendarWeek } from 'react-icons/bs';
 import { AiOutlineComment } from 'react-icons/ai';
+import { useThemeContext } from '../../../context/themeContext';
 
 interface TaskProps {}
 
 const Task = ({}: TaskProps) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
 
   return (
     <ContainerRow

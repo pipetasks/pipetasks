@@ -8,8 +8,7 @@ import {
   AiOutlinePieChart,
   AiOutlineProject,
 } from 'react-icons/ai';
-import { GoSettings, GoProject } from 'react-icons/go';
-import { BsCheckAll } from 'react-icons/bs';
+import { GoSettings } from 'react-icons/go';
 import { SideBarContainer } from './styles';
 
 const Sidebar = () => {

@@ -1,12 +1,12 @@
 import { ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
 import { MdMenuOpen } from 'react-icons/md';
-import { useTheme } from 'styled-components';
+import { useThemeContext } from '../../../context/themeContext';
 
 interface NavHeaderProps {}
 
 const NavHeader = ({}: NavHeaderProps) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   return (
     <ContainerRow
       as="header"

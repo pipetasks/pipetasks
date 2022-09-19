@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import { AiOutlineHome } from 'react-icons/ai';
-import { useTheme } from 'styled-components';
 import { ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
+import { useThemeContext } from '../../../context/themeContext';
 import { NavLinkProps } from './interface';
 
 const NavLink = ({ title, notifications, href, children }: NavLinkProps) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   return (
     <ContainerRow width="100%" align="center" justify="space-between">
       <Link href={href}>

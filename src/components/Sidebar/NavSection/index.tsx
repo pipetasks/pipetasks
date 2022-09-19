@@ -1,11 +1,11 @@
 import { IoIosArrowDown } from 'react-icons/io';
-import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
+import { useThemeContext } from '../../../context/themeContext';
 import { NavSectionProps } from './interface';
 
 const NavSection = ({ title, children }: NavSectionProps) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
 
   return (
     <ContainerColumn

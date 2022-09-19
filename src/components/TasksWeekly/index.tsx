@@ -1,12 +1,12 @@
-import { useTheme } from 'styled-components';
 import { ContainerColumn } from '../../assets/containers';
 import { Text } from '../../assets/reusableItens';
+import { useThemeContext } from '../../context/themeContext';
 import Task from './Task';
 
 interface TasksWeeklyProps {}
 
 const TasksWeekly = ({}: TasksWeeklyProps) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   return (
     <ContainerColumn
       gap="1rem"

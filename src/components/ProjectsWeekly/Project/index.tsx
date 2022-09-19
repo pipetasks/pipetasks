@@ -1,14 +1,14 @@
 import { AiOutlineComment } from 'react-icons/ai';
 import { BsCalendarWeek } from 'react-icons/bs';
 import { FaTasks } from 'react-icons/fa';
-import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
+import { useThemeContext } from '../../../context/themeContext';
 
 interface ProjectProps {}
 
 const Project = ({}: ProjectProps) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   return (
     <ContainerRow
       align="center"

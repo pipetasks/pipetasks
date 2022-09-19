@@ -1,12 +1,12 @@
-import { ThemeConsumer, useTheme } from 'styled-components';
 import { ContainerColumn } from '../../assets/containers';
 import { Text } from '../../assets/reusableItens';
+import { useThemeContext } from '../../context/themeContext';
 import Project from './Project';
 
 interface ProjectsWeeklyProps {}
 
 const ProjectsWeekly = ({}: ProjectsWeeklyProps) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   return (
     <ContainerColumn
       padding="1rem 0"

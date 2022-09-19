@@ -1,11 +1,11 @@
-import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../../assets/containers';
 import { Text } from '../../../assets/reusableItens';
+import { useThemeContext } from '../../../context/themeContext';
 
 interface NavInfoProps {}
 
 const NavInfo = ({}: NavInfoProps) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   return (
     <ContainerRow
       justify="space-between"

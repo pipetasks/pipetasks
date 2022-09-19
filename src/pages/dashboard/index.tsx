@@ -1,18 +1,19 @@
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import Sidebar from '../../components/Sidebar';
 import Head from 'next/head';
-import { useTheme } from 'styled-components';
+
 import Header from '../../components/Header';
 import TasksWeekly from '../../components/TasksWeekly';
 import { Text } from '../../assets/reusableItens';
 import ProjectsWeekly from '../../components/ProjectsWeekly';
 import { DashboardContainer } from './styles';
 import Footer from '../../components/Footer';
+import { useThemeContext } from '../../context/themeContext';
 
 interface DashboardProps {}
 
 const Dashboard = (): DashboardProps => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
 
   return (
     <>

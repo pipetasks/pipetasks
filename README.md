@@ -49,7 +49,8 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] Adicionar link do repositório back end do Davi;
 - [ ] https://www.youtube.com/watch?v=ngVU74daJ8Y 23 minutos
 - [ ] Limitar a largura da SideBar
-- [ ] Alterar o type dos componentes Text na aplicação
+- [ ] Limitar a altura da SideBar
+- [x] Alterar o type dos componentes Text na aplicação
 
 ## 🛠 Estrutura de pastas e componentes
 

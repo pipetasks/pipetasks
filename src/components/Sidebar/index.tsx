@@ -6,17 +6,15 @@ import NavLink from './NavLink';
 import { AiOutlineHome, AiOutlinePieChart } from 'react-icons/ai';
 import { GoSettings } from 'react-icons/go';
 import { BsCheckAll } from 'react-icons/bs';
+import { SideBarContainer } from './styles';
 
 const Sidebar = () => {
-  const teste = 0;
   return (
-    <ContainerColumn
+    <SideBarContainer
       align="center"
       gap="1.5rem"
       borderRight="1px solid var(--gray-800)"
       as="aside"
-      height="100vh"
-      width="21.563rem"
     >
       <NavHeader />
 
@@ -37,7 +35,7 @@ const Sidebar = () => {
           </NavLink>
           <NavLink
             title="Configurações"
-            notifications={teste}
+            notifications={13}
             href="/configuracoes"
           >
             <GoSettings fontSize="1.5rem" color="var(--blue)" rotate="180deg" />
@@ -56,7 +54,7 @@ const Sidebar = () => {
           </NavLink>
         </NavSection>
       </ContainerColumn>
-    </ContainerColumn>
+    </SideBarContainer>
   );
 };
 

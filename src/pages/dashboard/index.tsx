@@ -23,7 +23,7 @@ const Dashboard = (): DashboardProps => {
       </Head>
       <ContainerRow background={theme.colors.background}>
         <Sidebar />
-        <ContainerColumn width="100%">
+        <ContainerColumn width="100%" padding="0 0 0 21.563rem">
           <Header />
           <ContainerColumn align="center" padding="2rem" gap="1rem">
             <TasksWeekly />

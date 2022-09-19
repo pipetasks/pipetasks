@@ -19,7 +19,6 @@ const ProjectsWeekly = ({}: ProjectsWeeklyProps) => {
       </Text>
       <Project />
       <Project />
-      <Project />
     </ContainerColumn>
   );
 };

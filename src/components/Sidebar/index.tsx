@@ -7,26 +7,34 @@ import { AiOutlineHome, AiOutlinePieChart } from 'react-icons/ai';
 import { GoSettings } from 'react-icons/go';
 import { BsCheckAll } from 'react-icons/bs';
 import { SideBarContainer } from './styles';
+import { useState } from 'react';
 
 const Sidebar = () => {
+  const [sideOpen, setSideOpen] = useState(true);
+
+  const handleSideOpen = () => {
+    setSideOpen(!sideOpen);
+  };
+
   return (
     <SideBarContainer
       align="center"
       gap="1.5rem"
       borderRight="1px solid var(--gray-800)"
       as="aside"
+      open={sideOpen}
     >
-      <NavHeader />
+      <NavHeader handleSideOpen={handleSideOpen} open={sideOpen} />
 
       <ContainerColumn
         align="center"
         gap="1.5rem"
-        padding="0 2rem"
+        padding={sideOpen ? '0 2rem' : '0 0.25rem'}
         width="100%"
       >
-        <NavInfo />
+        <NavInfo open={sideOpen} />
 
-        <NavSection title="dashboards">
+        <NavSection title="dashboards" open={sideOpen}>
           <NavLink title="Home" notifications={1} href="/dashboard">
             <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
           </NavLink>
@@ -42,7 +50,7 @@ const Sidebar = () => {
           </NavLink>
         </NavSection>
 
-        <NavSection title="projetos">
+        <NavSection title="projetos" open={sideOpen}>
           <NavLink title="Projeto1" notifications={12} href="/dashboard">
             <BsCheckAll fontSize="1.5rem" color="var(--blue)" />
           </NavLink>

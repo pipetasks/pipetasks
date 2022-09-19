@@ -1,8 +1,17 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import { ContainerColumn } from '../../assets/containers';
 
-export const SideBarContainer = styled(ContainerColumn)`
+interface SideBarContainerProps {
+  open: boolean;
+}
+
+export const SideBarContainer = styled(ContainerColumn)<SideBarContainerProps>`
   height: 100vh;
   position: fixed;
-  width: 21.563rem;
+  width: ${({ open }) => (open ? '21.563rem' : '5rem')};
+
+  /* @media (max-width: 400px) {
+    width: 18rem;
+  } */
 `;

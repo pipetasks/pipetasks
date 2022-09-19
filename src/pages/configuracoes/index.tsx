@@ -1,8 +1,9 @@
-import { ContainerRow } from '../../assets/containers';
+import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import Sidebar from '../../components/Sidebar';
 import { useTheme } from 'styled-components';
 import { useThemeContext } from '../../context/themeContext';
 import Head from 'next/head';
+import Header from '../../components/Header';
 
 interface SettingsProps {}
 
@@ -13,10 +14,13 @@ const Settings = (): SettingsProps => {
       <Head>
         <title>Pipe Tasks - Configurações</title>
       </Head>
-      <ContainerRow background={theme.colors.background}>
+      <ContainerRow background={theme.colors.background} height="100%">
         <Sidebar />
-        <button onClick={toggleTheme}>alterar thema aqui </button>
-        <h1>{theme.name}</h1>
+        <ContainerColumn width="100%" padding="0 0 0 21.563rem">
+          <Header />
+          <button onClick={toggleTheme}>alterar thema aqui </button>
+          <h1>{theme.name}</h1>
+        </ContainerColumn>
       </ContainerRow>
     </>
   );

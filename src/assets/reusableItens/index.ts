@@ -24,6 +24,7 @@ export const Text = styled.h1<TextProps>`
   text-align: ${(props) => (props.align ? props.align : 'center')};
 
   max-width: ${(props) => props.mw ?? props.mw};
+  padding: ${(props) => props.padding ?? props.padding};
 `;
 
 export const Span = styled.span<SpanProps>`

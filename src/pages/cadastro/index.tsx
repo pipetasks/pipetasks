@@ -62,72 +62,110 @@ const SignUp = () => {
               as="form"
               onSubmit={handleSubmit(handleSignUp)}
             >
-              <ContainerRow
-                width="17.5rem"
-                padding="0 0 0 4px"
-                borderBottom={
-                  !!errors.name
-                    ? 'solid 2px var(--red)'
-                    : 'solid 2px var(--black-800)'
-                }
-                align="center"
-                justify="space-between"
-              >
-                <Input
-                  type="text"
-                  placeholder="Nome"
-                  {...register('name')}
-                  error={errors.name}
-                />
-                <IoPersonOutline
-                  color={!!errors.name ? 'var(--red)' : 'var(--black-800)'}
-                  font-size="1.125rem"
-                />
-              </ContainerRow>
-              <ContainerRow
-                width="17.5rem"
-                padding="0 0 0 4px"
-                borderBottom={
-                  !!errors.email
-                    ? 'solid 2px var(--red)'
-                    : 'solid 2px var(--black-800)'
-                }
-                align="center"
-                justify="space-between"
-              >
-                <Input
-                  type="email"
-                  placeholder="E-mail"
-                  {...register('email')}
-                  error={errors.email}
-                />
-                <HiOutlineMail
-                  color={!!errors.email ? 'var(--red)' : 'var(--black-800)'}
-                  font-size="1.125rem"
-                />
-              </ContainerRow>
-              <ContainerRow
-                width="17.5rem"
-                padding="0 0 0 4px"
-                borderBottom={
-                  !!errors.password
-                    ? 'solid 2px var(--red)'
-                    : 'solid 2px var(--black-800)'
-                }
-                align="center"
-                justify="space-between"
-              >
-                <Input
-                  type="password"
-                  placeholder="Senha"
-                  {...register('password')}
-                  error={errors.password}
-                />
-                <HiOutlineLockClosed
-                  color={!!errors.password ? 'var(--red)' : 'var(--black-800)'}
-                  font-size="1.125rem"
-                />
-              </ContainerRow>
+              <ContainerColumn gap="5px" align="flex-start">
+                <ContainerRow
+                  width="17.5rem"
+                  padding="0 0 0 4px"
+                  borderBottom={
+                    !!errors.name
+                      ? 'solid 2px var(--red)'
+                      : 'solid 2px var(--black-800)'
+                  }
+                  align="center"
+                  justify="space-between"
+                >
+                  <Input
+                    type="text"
+                    placeholder="Nome"
+                    {...register('name')}
+                    error={errors.name}
+                  />
+                  <IoPersonOutline
+                    color={!!errors.name ? 'var(--red)' : 'var(--black-800)'}
+                    font-size="1.125rem"
+                  />
+                </ContainerRow>
+                {!!errors.name && (
+                  <Text
+                    variant="texting8"
+                    color="var(--red)"
+                    align="left"
+                    padding="0 0 0 4px"
+                  >
+                    {errors.name.message}
+                  </Text>
+                )}
+              </ContainerColumn>
+              <ContainerColumn gap="5px" align="flex-start">
+                <ContainerRow
+                  width="17.5rem"
+                  padding="0 0 0 4px"
+                  borderBottom={
+                    !!errors.email
+                      ? 'solid 2px var(--red)'
+                      : 'solid 2px var(--black-800)'
+                  }
+                  align="center"
+                  justify="space-between"
+                >
+                  <Input
+                    type="email"
+                    placeholder="E-mail"
+                    {...register('email')}
+                    error={errors.email}
+                  />
+                  <HiOutlineMail
+                    color={!!errors.email ? 'var(--red)' : 'var(--black-800)'}
+                    font-size="1.125rem"
+                  />
+                </ContainerRow>
+                {!!errors.email && (
+                  <Text
+                    variant="texting8"
+                    color="var(--red)"
+                    align="left"
+                    padding="0 0 0 4px"
+                  >
+                    {errors.email.message}
+                  </Text>
+                )}
+              </ContainerColumn>
+              <ContainerColumn gap="5px" align="flex-start">
+                <ContainerRow
+                  width="17.5rem"
+                  padding="0 0 0 4px"
+                  borderBottom={
+                    !!errors.password
+                      ? 'solid 2px var(--red)'
+                      : 'solid 2px var(--black-800)'
+                  }
+                  align="center"
+                  justify="space-between"
+                >
+                  <Input
+                    type="password"
+                    placeholder="Senha"
+                    {...register('password')}
+                    error={errors.password}
+                  />
+                  <HiOutlineLockClosed
+                    color={
+                      !!errors.password ? 'var(--red)' : 'var(--black-800)'
+                    }
+                    font-size="1.125rem"
+                  />
+                </ContainerRow>
+                {!!errors.password && (
+                  <Text
+                    variant="texting8"
+                    color="var(--red)"
+                    align="left"
+                    padding="0 0 0 4px"
+                  >
+                    {errors.password.message}
+                  </Text>
+                )}
+              </ContainerColumn>
               <button type="submit">Registre-se</button>
             </ContainerColumn>
           </ContainerColumn>

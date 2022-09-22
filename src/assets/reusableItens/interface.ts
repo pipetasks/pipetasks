@@ -15,6 +15,7 @@ export interface TextProps {
   mw?: string;
   align?: 'right' | 'left' | 'center';
   transform?: 'uppercase' | 'lowercase';
+  padding?: string;
 }
 
 export interface SpanProps {

@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
-export const ContainerInput = styled.label`
+interface ContainerInputProps {
+  isInvalid: boolean;
+}
+
+export const ContainerInput = styled.label<ContainerInputProps>`
   width: 100%;
   input {
     border: 0 none;
 
-    color: var(--black);
+    color: ${(props) => (props.isInvalid ? 'var(--red)' : 'var(--black-800)')};
 
     width: 100%;
   }

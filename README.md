@@ -33,6 +33,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [Axios](https://github.com/axios/axios)
 - [StyledComponents](https://styled-components.com/)
 - [React Modal](https://reactcommunity.org/react-modal/)
+- [Yup](https://github.com/jquense/yup)
 
 #### **Utilitários**
 

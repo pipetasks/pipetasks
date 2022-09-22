@@ -3,11 +3,11 @@ import { InputProps } from './interface';
 import { ContainerInput } from './styles';
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { ...rest },
+  { error, ...rest },
   ref
 ) => {
   return (
-    <ContainerInput>
+    <ContainerInput isInvalid={!!error}>
       <input {...rest} ref={ref} />
     </ContainerInput>
   );

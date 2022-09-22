@@ -5,6 +5,8 @@ import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import { Span, Text } from '../../assets/reusableItens';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Input } from '../../components/Input';
 import { SignInContainer, SignInContent, SignInHero } from './styles';
 
@@ -13,8 +15,17 @@ interface FormLoginInputs {
   password: string;
 }
 
+const loginFormSchema = yup.object().shape({
+  email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
+  password: yup.string().required('Senha obrigatória'),
+});
+
 const Login = () => {
-  const { register, handleSubmit } = useForm<FormLoginInputs>();
+  const { register, handleSubmit, formState } = useForm<FormLoginInputs>({
+    resolver: yupResolver(loginFormSchema),
+  });
+
+  const { errors } = formState;
 
   const handleSignIn: SubmitHandler<FormLoginInputs> = (
     data: FormLoginInputs
@@ -54,31 +65,44 @@ const Login = () => {
               <ContainerRow
                 width="17.5rem"
                 padding="0 0 0 4px"
-                borderBottom="solid 2px var(--black-800)"
+                borderBottom={
+                  !!errors.email
+                    ? 'solid 2px var(--red)'
+                    : 'solid 2px var(--black-800)'
+                }
                 align="center"
                 justify="space-between"
               >
                 <Input
                   type="email"
                   placeholder="E-mail"
+                  error={errors.email}
                   {...register('email')}
                 />
-                <HiOutlineMail color="var(--black-800)" font-size="1.125rem" />
+                <HiOutlineMail
+                  color={!!errors.email ? 'var(--red)' : 'var(--black-800)'}
+                  font-size="1.125rem"
+                />
               </ContainerRow>
               <ContainerRow
                 width="17.5rem"
                 padding="0 0 0 4px"
-                borderBottom="solid 2px var(--black-800)"
+                borderBottom={
+                  !!errors.password
+                    ? 'solid 2px var(--red)'
+                    : 'solid 2px var(--black-800)'
+                }
                 align="center"
                 justify="space-between"
               >
                 <Input
                   type="password"
                   placeholder="Senha"
+                  error={errors.password}
                   {...register('password')}
                 />
                 <HiOutlineLockClosed
-                  color="var(--black-800)"
+                  color={!!errors.password ? 'var(--red)' : 'var(--black-800)'}
                   font-size="1.125rem"
                 />
               </ContainerRow>

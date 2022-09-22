@@ -7,6 +7,8 @@ import { IoPersonOutline } from 'react-icons/io5';
 import { Input } from '../../components/Input';
 import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import { SignUpContainer, SignUpContent, SignUpHero } from './styles';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 interface FormRegisterInputs {
   name: string;
@@ -14,8 +16,18 @@ interface FormRegisterInputs {
   password: string;
 }
 
+const signUpFormSchema = yup.object().shape({
+  email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
+  name: yup.string().required('Nome obrigatório'),
+  password: yup.string().required('Senha obrigatória'),
+});
+
 const SignUp = () => {
-  const { register, handleSubmit } = useForm<FormRegisterInputs>();
+  const { register, handleSubmit, formState } = useForm<FormRegisterInputs>({
+    resolver: yupResolver(signUpFormSchema),
+  });
+
+  const { errors } = formState;
 
   const handleSignUp: SubmitHandler<FormRegisterInputs> = (
     data: FormRegisterInputs
@@ -53,20 +65,33 @@ const SignUp = () => {
               <ContainerRow
                 width="17.5rem"
                 padding="0 0 0 4px"
-                borderBottom="solid 2px var(--black-800)"
+                borderBottom={
+                  !!errors.name
+                    ? 'solid 2px var(--red)'
+                    : 'solid 2px var(--black-800)'
+                }
                 align="center"
                 justify="space-between"
               >
-                <Input type="text" placeholder="Nome" {...register('name')} />
+                <Input
+                  type="text"
+                  placeholder="Nome"
+                  {...register('name')}
+                  error={errors.name}
+                />
                 <IoPersonOutline
-                  color="var(--black-800)"
+                  color={!!errors.name ? 'var(--red)' : 'var(--black-800)'}
                   font-size="1.125rem"
                 />
               </ContainerRow>
               <ContainerRow
                 width="17.5rem"
                 padding="0 0 0 4px"
-                borderBottom="solid 2px var(--black-800)"
+                borderBottom={
+                  !!errors.email
+                    ? 'solid 2px var(--red)'
+                    : 'solid 2px var(--black-800)'
+                }
                 align="center"
                 justify="space-between"
               >
@@ -74,13 +99,21 @@ const SignUp = () => {
                   type="email"
                   placeholder="E-mail"
                   {...register('email')}
+                  error={errors.email}
                 />
-                <HiOutlineMail color="var(--black-800)" font-size="1.125rem" />
+                <HiOutlineMail
+                  color={!!errors.email ? 'var(--red)' : 'var(--black-800)'}
+                  font-size="1.125rem"
+                />
               </ContainerRow>
               <ContainerRow
                 width="17.5rem"
                 padding="0 0 0 4px"
-                borderBottom="solid 2px var(--black-800)"
+                borderBottom={
+                  !!errors.password
+                    ? 'solid 2px var(--red)'
+                    : 'solid 2px var(--black-800)'
+                }
                 align="center"
                 justify="space-between"
               >
@@ -88,9 +121,10 @@ const SignUp = () => {
                   type="password"
                   placeholder="Senha"
                   {...register('password')}
+                  error={errors.password}
                 />
                 <HiOutlineLockClosed
-                  color="var(--black-800)"
+                  color={!!errors.password ? 'var(--red)' : 'var(--black-800)'}
                   font-size="1.125rem"
                 />
               </ContainerRow>

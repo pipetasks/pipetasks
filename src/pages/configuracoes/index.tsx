@@ -66,7 +66,7 @@ const Settings = (): SettingsProps => {
                   width="100%"
                   justify="space-between"
                 >
-                  <Text variant="texting6" color={theme.colors.title}>
+                  <Text variant="texting6" color={theme.colors.title} as="p">
                     Customize a aparência da sua aplicação
                   </Text>
                   <select onChange={toggleTheme}>

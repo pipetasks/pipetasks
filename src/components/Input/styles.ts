@@ -9,9 +9,16 @@ export const ContainerInput = styled.label<ContainerInputProps>`
   input {
     border: 0 none;
 
-    color: ${(props) => (props.isInvalid ? 'var(--red)' : 'var(--black-800)')};
+    color: ${(props) =>
+      props.isInvalid
+        ? 'var(--red)'
+        : props.color
+        ? props.color
+        : 'var(--black-800)'};
 
     width: 100%;
+
+    background: transparent;
   }
 
   input:-webkit-autofill {

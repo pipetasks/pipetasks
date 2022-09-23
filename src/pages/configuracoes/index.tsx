@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ConfigSection from './components/ConfigSection';
 import ConfigItem from './components/ConfigItem';
+import { Text } from '../../assets/reusableItens';
 
 interface SettingsProps {}
 
@@ -59,7 +60,18 @@ const Settings = (): SettingsProps => {
               </ConfigItem>
             </ConfigSection>
             <ConfigSection title="Minhas configurações">
-              <ConfigItem item="Aparência" />
+              <ConfigItem item="Aparência">
+                <ContainerRow
+                  align="center"
+                  width="100%"
+                  justify="space-between"
+                >
+                  <Text variant="texting6" color="var(--black-800)">
+                    Customize a aparência da sua aplicação
+                  </Text>
+                  <button onClick={toggleTheme}>{theme.name}</button>
+                </ContainerRow>
+              </ConfigItem>
             </ConfigSection>
           </ContainerColumn>
         </ContainerColumn>

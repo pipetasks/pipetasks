@@ -38,7 +38,7 @@ export const dark: DefaultTheme = {
       color: 'var(--gray-700)',
     },
     tasks: {
-      background: 'var(--gray-800)',
+      background: 'var(--black-800)',
       color: 'var(--gray-200)',
     },
   },

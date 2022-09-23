@@ -10,6 +10,7 @@ import {
 } from 'react-icons/ai';
 import { GoSettings } from 'react-icons/go';
 import { SideBarContainer } from './styles';
+import { FaTasks } from 'react-icons/fa';
 
 const Sidebar = () => {
   return (
@@ -33,6 +34,9 @@ const Sidebar = () => {
           <NavSection title="dashboards">
             <NavLink title="Home" notifications={1} href="/dashboard">
               <AiOutlineHome fontSize="1.5rem" color="var(--blue)" />
+            </NavLink>
+            <NavLink title="Tasks" notifications={4} href="/tasks">
+              <FaTasks fontSize="1.5rem" color="var(--blue)" />
             </NavLink>
             <NavLink title="Analytics" notifications={12} href="/analytics">
               <AiOutlinePieChart fontSize="1.5rem" color="var(--blue)" />

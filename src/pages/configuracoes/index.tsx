@@ -5,6 +5,8 @@ import { useThemeContext } from '../../context/themeContext';
 import Head from 'next/head';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ConfigSection from './components/ConfigSection';
+import ConfigItem from './components/ConfigItem';
 
 interface SettingsProps {}
 
@@ -22,10 +24,44 @@ const Settings = (): SettingsProps => {
       >
         <Sidebar />
         <Footer />
-        <ContainerColumn width="100%" padding="0 0 0 21.563rem" height="100%">
+        <ContainerColumn
+          width="100%"
+          padding="0 0 0 21.563rem"
+          height="100%"
+          as="main"
+        >
           <Header />
-          <button onClick={toggleTheme}>alterar thema aqui </button>
-          <h1>{theme.name}</h1>
+          <ContainerColumn
+            align="center"
+            padding="2rem"
+            gap="3rem"
+            width="100%"
+          >
+            <ConfigSection title="Minha conta" subtitle="Informações Pessoais">
+              <ConfigItem
+                item="Informações Pessoais"
+                description="natalia.nunes@gmail.com"
+              />
+              <ConfigItem item="Informações Pessoais">
+                <input placeholder="Insira seu nome aqui " />
+              </ConfigItem>
+              <ConfigItem
+                item="Log out"
+                description="Você será desconectado de todas as sessões ativas e terá que fazer login novamente."
+              >
+                <button>Log Out</button>
+              </ConfigItem>
+              <ConfigItem
+                item="Deletar minha conta"
+                description="Essa ação não pode ser desfeita"
+              >
+                <button>Deletar minha conta</button>
+              </ConfigItem>
+            </ConfigSection>
+            <ConfigSection title="Minhas configurações">
+              <ConfigItem item="Aparência" />
+            </ConfigSection>
+          </ContainerColumn>
         </ContainerColumn>
       </ContainerRow>
     </>

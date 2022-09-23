@@ -17,8 +17,8 @@ const TasksWeekly = ({}: TasksWeeklyProps) => {
       <Text variant="texting3" color={theme.colors.tasks.color}>
         Tarefas próximas a vencer
       </Text>
-      <Task />
-      <Task />
+      <Task title="Nome da tarefa" />
+      <Task title="Nome da tarefa" />
     </ContainerColumn>
   );
 };

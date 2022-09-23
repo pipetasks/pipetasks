@@ -9,6 +9,7 @@ import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import { SignUpContainer, SignUpContent, SignUpHero } from './styles';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { NextPage } from 'next';
 
 interface FormRegisterInputs {
   name: string;
@@ -22,7 +23,7 @@ const signUpFormSchema = yup.object().shape({
   password: yup.string().required('Senha obrigatória'),
 });
 
-const SignUp = () => {
+const SignUp: NextPage = () => {
   const { register, handleSubmit, formState } = useForm<FormRegisterInputs>({
     resolver: yupResolver(signUpFormSchema),
   });

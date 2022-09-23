@@ -8,10 +8,11 @@ import Footer from '../../components/Footer';
 import ConfigSection from './components/ConfigSection';
 import ConfigItem from './components/ConfigItem';
 import { Button, Text } from '../../assets/reusableItens';
+import { NextPage } from 'next';
 
 interface SettingsProps {}
 
-const Settings = (): SettingsProps => {
+const Settings: NextPage = () => {
   const { theme, toggleTheme } = useThemeContext();
   return (
     <>

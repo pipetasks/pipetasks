@@ -9,6 +9,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Input } from '../../components/Input';
 import { SignInContainer, SignInContent, SignInHero } from './styles';
+import { NextPage } from 'next';
 
 interface FormLoginInputs {
   email: string;
@@ -20,7 +21,7 @@ const loginFormSchema = yup.object().shape({
   password: yup.string().required('Senha obrigatória'),
 });
 
-const Login = () => {
+const Login: NextPage = () => {
   const { register, handleSubmit, formState } = useForm<FormLoginInputs>({
     resolver: yupResolver(loginFormSchema),
   });

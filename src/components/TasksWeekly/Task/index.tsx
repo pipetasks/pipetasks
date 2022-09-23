@@ -5,9 +5,11 @@ import { BsCalendarWeek } from 'react-icons/bs';
 import { AiOutlineComment } from 'react-icons/ai';
 import { useThemeContext } from '../../../context/themeContext';
 
-interface TaskProps {}
+interface TaskProps {
+  title: string;
+}
 
-const Task = ({}: TaskProps) => {
+const Task = ({ title }: TaskProps) => {
   const { theme } = useThemeContext();
 
   return (
@@ -24,11 +26,9 @@ const Task = ({}: TaskProps) => {
         <FaTasks color="var(--blue)" />
         <ContainerColumn justify="center" align="flex-start" gap="8px">
           <Text variant="texting2" color={theme.colors.title} as="h2">
-            Nome do projeto
+            {title}
           </Text>
-          <Text variant="texting6" color={theme.colors.title} as="h3">
-            Nome da tarefa
-          </Text>
+
           <ContainerRow gap="8px" align="center">
             <BsCalendarWeek fontSize="0.75rem" color={theme.colors.subtitle} />
             <Text variant="texting7" color={theme.colors.subtitle} as="p">

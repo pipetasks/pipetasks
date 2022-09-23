@@ -1,4 +1,4 @@
-export const variants = {
+export const textVariants = {
   texting1: {
     size: '2.25rem',
     weight: 600,
@@ -30,5 +30,18 @@ export const variants = {
   texting8: {
     size: '0.75rem',
     weight: 800,
+  },
+};
+
+export const buttonVariants = {
+  removed: {
+    color: 'var(--red)',
+    padding: '8px 16px',
+    border: '1px solid var(--red)',
+    borderRadius: '8px',
+    background: 'transparent',
+    backgroundHover: '#ff260620',
+    fontSize: '1rem',
+    fontWeight: 500,
   },
 };

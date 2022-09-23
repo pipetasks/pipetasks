@@ -7,7 +7,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ConfigSection from './components/ConfigSection';
 import ConfigItem from './components/ConfigItem';
-import { Text } from '../../assets/reusableItens';
+import { Button, Text } from '../../assets/reusableItens';
 
 interface SettingsProps {}
 
@@ -50,13 +50,13 @@ const Settings = (): SettingsProps => {
                 item="Log out"
                 description="Você será desconectado de todas as sessões ativas e terá que fazer login novamente."
               >
-                <button>Log Out</button>
+                <Button variant="removed">Log Out</Button>
               </ConfigItem>
               <ConfigItem
                 item="Deletar minha conta"
                 description="Essa ação não pode ser desfeita"
               >
-                <button>Deletar minha conta</button>
+                <Button variant="removed">Deletar minha conta</Button>
               </ConfigItem>
             </ConfigSection>
             <ConfigSection title="Minhas configurações">

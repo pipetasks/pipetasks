@@ -33,3 +33,15 @@ export interface SpanProps {
 
   size?: string;
 }
+
+export interface ButtonProps {
+  color?: string;
+  background?: string;
+  variant?: 'removed';
+  padding?: string;
+  border?: string;
+  borderRadius?: string;
+  backgroundHover?: string;
+  fontSize?: string;
+  fontWeight?: string;
+}

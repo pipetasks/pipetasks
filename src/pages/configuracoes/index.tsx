@@ -66,9 +66,13 @@ const Settings = (): SettingsProps => {
                   width="100%"
                   justify="space-between"
                 >
-                  <Text variant="texting6" color="var(--black-800)">
+                  <Text variant="texting6" color={theme.colors.title}>
                     Customize a aparência da sua aplicação
                   </Text>
+                  <select onChange={toggleTheme}>
+                    <option onClick={toggleTheme}>Light</option>
+                    <option onClick={toggleTheme}>Dark</option>
+                  </select>
                   <button onClick={toggleTheme}>{theme.name}</button>
                 </ContainerRow>
               </ConfigItem>

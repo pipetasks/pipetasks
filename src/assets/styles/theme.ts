@@ -19,6 +19,7 @@ export const light: DefaultTheme = {
       background: 'var(--white-200)',
       color: 'var(--black-800)',
     },
+    divider: 'var(--gray-200)',
   },
 };
 
@@ -41,5 +42,6 @@ export const dark: DefaultTheme = {
       background: 'var(--black-800)',
       color: 'var(--gray-200)',
     },
+    divider: 'var(--gray-800)',
   },
 };

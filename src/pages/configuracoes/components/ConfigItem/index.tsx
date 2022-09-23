@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../../../assets/containers';
 import { Text } from '../../../../assets/reusableItens';
 
@@ -9,18 +10,23 @@ interface ConfigItemProps {
 }
 
 const ConfigItem = ({ item, description, children }: ConfigItemProps) => {
+  const theme = useTheme();
   return (
     <ContainerColumn width="100%" gap="8px" align="flex-start">
-      <Text variant="texting7" color="var(--gray-700)">
+      <Text variant="texting7" color="var(--gray-700)" as="p">
         {item}
       </Text>
       {!!description && (
-        <Text variant="texting6" color="var(--black-800)">
+        <Text variant="texting6" color={theme.colors.title} as="p">
           {description}
         </Text>
       )}
       {!!children && children}
-      <ContainerRow width="100%" height="2px" background="var(--gray-200)" />
+      <ContainerRow
+        width="100%"
+        height="2px"
+        background={theme.colors.divider}
+      />
     </ContainerColumn>
   );
 };

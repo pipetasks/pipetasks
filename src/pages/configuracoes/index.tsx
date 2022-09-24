@@ -1,6 +1,5 @@
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import Sidebar from '../../components/Sidebar';
-import { useTheme } from 'styled-components';
 import { useThemeContext } from '../../context/themeContext';
 import Head from 'next/head';
 import Header from '../../components/Header';

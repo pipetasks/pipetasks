@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import { dark, light } from '../assets/styles/theme';
+import usePersistedState from '../hooks/usePersistedState';
 
 interface ThemeContextProviderProps {
   children: ReactNode;
@@ -16,7 +17,7 @@ export const ThemeContext = createContext<ThemeContextProps>(
 );
 
 export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = usePersistedState('theme', light);
 
   const toggleTheme = () => {
     setTheme(theme.name === 'light' ? dark : light);

@@ -153,18 +153,17 @@ yarn start
  <b>Vitor Sousa</b>🚀
 <br />
 
-<hr />
-
 [![Linkedin Badge](https://img.shields.io/badge/-Vitor%20Sousa-395bfc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitorr-sousaa//)](https://www.linkedin.com/in/vitorr-sousaa//)
 
 </div>
+
+<hr />
+
 <div>
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/86134492?v=4" width="100px;" alt=""/>
  <br />
  <b>Davi Artur</b>🚀
 <br />
-
-<hr />
 
 [![Linkedin Badge](https://img.shields.io/badge/-Davi%20Artur-395bfc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/davi-artur-9a7712215/)](https://www.linkedin.com/in/davi-artur-9a7712215/)
 

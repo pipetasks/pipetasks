@@ -8,11 +8,16 @@ import ConfigSection from './components/ConfigSection';
 import ConfigItem from './components/ConfigItem';
 import { Button, Text } from '../../assets/reusableItens';
 import { NextPage } from 'next';
+import { parseCookies } from 'nookies';
 
 interface SettingsProps {}
 
-const Settings: NextPage = () => {
+const Settings: NextPage = (props) => {
   const { theme, toggleTheme } = useThemeContext();
+
+  const cookies = parseCookies();
+
+  console.log(props);
   return (
     <>
       <Head>

@@ -30,7 +30,7 @@ const Header = ({}: HeaderProps) => {
         height="3rem"
         width="16.5rem"
       >
-        <AiOutlineSearch font-size="1.5rem" color="var(--gray-700)" />
+        <AiOutlineSearch fontSize="1.5rem" color="var(--gray-700)" />
         <Input
           type="text"
           placeholder="Pesquise sua tarefa"
@@ -38,7 +38,7 @@ const Header = ({}: HeaderProps) => {
           {...register('search')}
         />
       </ContainerRow>
-      <AiOutlineClose color="var(--blue)" font-size="1.5rem" cursor="pointer" />
+      <AiOutlineClose color="var(--blue)" fontSize="1.5rem" cursor="pointer" />
     </ContainerRow>
   );
 };

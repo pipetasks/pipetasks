@@ -34,6 +34,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [StyledComponents](https://styled-components.com/)
 - [React Modal](https://reactcommunity.org/react-modal/)
 - [Yup](https://github.com/jquense/yup)
+- [Nookies](https://github.com/maticzav/nookies)
 
 #### **Utilitários**
 

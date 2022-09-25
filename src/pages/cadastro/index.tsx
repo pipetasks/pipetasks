@@ -23,7 +23,7 @@ const signUpFormSchema = yup.object().shape({
   password: yup.string().required('Senha obrigatória'),
 });
 
-const SignUp: NextPage = () => {
+const SignUp: NextPage = (props) => {
   const { register, handleSubmit, formState } = useForm<FormRegisterInputs>({
     resolver: yupResolver(signUpFormSchema),
   });

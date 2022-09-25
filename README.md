@@ -147,7 +147,7 @@ yarn start
 
 ## 🧑🏻 Autores
 
-<div style=" display: flex; align-items: flex-start; justify-content: space-between " >
+<div style=" display: flex; flex-direction: row; width: 100%; align-items: flex-start; justify-content: space-between " >
 
 <div>
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/94024958?v=4" width="100px;" alt=""/>

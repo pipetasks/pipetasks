@@ -154,21 +154,15 @@ yarn start
  <b>Vitor Sousa</b>🚀
 <br />
 
-Feito por Vitor Sousa 👋🏻 Entre em contato!
-
-[![Linkedin Badge](https://img.shields.io/badge/-Vitor%20Sousa-ff512f?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitorr-sousaa//)](https://www.linkedin.com/in/vitorr-sousaa//)
-[![Gmail Badge](https://img.shields.io/badge/-v.sousa.cf@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:v.sousa.cf@gmail.com)](mailto:v.sousa.cf@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-Vitor%20Sousa-395bfc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitorr-sousaa//)](https://www.linkedin.com/in/vitorr-sousaa//)
 
 </div>
 <div>
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/94024958?v=4" width="100px;" alt=""/>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/86134492?v=4" width="100px;" alt=""/>
  <b>Davi Artur</b>🚀
 <br />
 
-Feito por Vitor Sousa 👋🏻 Entre em contato!
-
-[![Linkedin Badge](https://img.shields.io/badge/-Vitor%20Sousa-ff512f?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitorr-sousaa//)](https://www.linkedin.com/in/vitorr-sousaa//)
-[![Gmail Badge](https://img.shields.io/badge/-v.sousa.cf@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:v.sousa.cf@gmail.com)](mailto:v.sousa.cf@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-Davi%20Artur-395bfc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/davi-artur-9a7712215/)](https://www.linkedin.com/in/davi-artur-9a7712215/)
 
 </div>
 </div>

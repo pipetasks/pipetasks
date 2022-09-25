@@ -46,9 +46,8 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 
 ## ⚙️ Funcionalidades
 
-- [ ] Adicionar verificação do que foi digitado no input da página SignIn e SignUp;
-- [ ] Adicionar as imagens do Layout na aba de Layout do Github;
-- [ ] Adicionar link do repositório back end do Davi;
+- [x] Adicionar verificação do que foi digitado no input da página SignIn e SignUp;
+- [ ] Adicionar as imagens do Layout na aba de Layout do ReadMe;
 - [ ] Limitar a largura da SideBar
 - [ ] Limitar a altura da SideBar
 - [x] Alterar o type dos componentes Text na aplicação
@@ -146,8 +145,11 @@ yarn start
 3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
 4. Envie as suas alterações: `git push origin my-feature`
 
-## 🧑🏻 Autor
+## 🧑🏻 Autores
 
+<div style=" display: flex; align-items: flex-start; justify-content: space-between " >
+
+<div>
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/94024958?v=4" width="100px;" alt=""/>
  <b>Vitor Sousa</b>🚀
 <br />
@@ -156,5 +158,19 @@ Feito por Vitor Sousa 👋🏻 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Vitor%20Sousa-ff512f?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitorr-sousaa//)](https://www.linkedin.com/in/vitorr-sousaa//)
 [![Gmail Badge](https://img.shields.io/badge/-v.sousa.cf@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:v.sousa.cf@gmail.com)](mailto:v.sousa.cf@gmail.com)
+
+</div>
+<div>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/94024958?v=4" width="100px;" alt=""/>
+ <b>Davi Artur</b>🚀
+<br />
+
+Feito por Vitor Sousa 👋🏻 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Vitor%20Sousa-ff512f?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitorr-sousaa//)](https://www.linkedin.com/in/vitorr-sousaa//)
+[![Gmail Badge](https://img.shields.io/badge/-v.sousa.cf@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:v.sousa.cf@gmail.com)](mailto:v.sousa.cf@gmail.com)
+
+</div>
+</div>
 
 ## 📝 Licença

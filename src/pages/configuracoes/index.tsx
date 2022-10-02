@@ -1,23 +1,27 @@
-import { ContainerColumn, ContainerRow } from '../../assets/containers';
-import Sidebar from '../../components/Sidebar';
+// Context
 import { useThemeContext } from '../../context/themeContext';
+
+// Next
 import Head from 'next/head';
+import { NextPage } from 'next';
+
+// Componentes
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ConfigSection from './components/ConfigSection';
 import ConfigItem from './components/ConfigItem';
+import Sidebar from '../../components/Sidebar';
+
+// Styles
 import { Button, Text } from '../../assets/reusableItens';
-import { NextPage } from 'next';
-import { parseCookies } from 'nookies';
+import { ContainerColumn, ContainerRow } from '../../assets/containers';
 
-interface SettingsProps {}
+// HOC
+import { withAuth } from '../../helper/withAuth';
 
-const Settings: NextPage = (props) => {
+const Settings: NextPage = () => {
   const { theme, toggleTheme } = useThemeContext();
 
-  const cookies = parseCookies();
-
-  console.log(props);
   return (
     <>
       <Head>
@@ -88,5 +92,9 @@ const Settings: NextPage = (props) => {
     </>
   );
 };
+
+export const getServerSideProps = withAuth( async (ctx) => {
+  return { props: {} }
+})
 
 export default Settings;

@@ -1,17 +1,34 @@
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
-import Sidebar from '../../components/Sidebar';
+
+// Head Config
 import Head from 'next/head';
 
-import Header from '../../components/Header';
-import TasksWeekly from '../../components/TasksWeekly';
-import { Text } from '../../assets/reusableItens';
-import ProjectsWeekly from '../../components/ProjectsWeekly';
-import { DashboardContainer } from './styles';
-import Footer from '../../components/Footer';
-import { useThemeContext } from '../../context/themeContext';
-import { NextPage } from 'next';
+// React
+import { useContext } from 'react';
 
-const Dashboard: NextPage = () => {
+// Components
+import Sidebar from '../../components/Sidebar';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import TasksWeekly from '../../components/TasksWeekly';
+import ProjectsWeekly from '../../components/ProjectsWeekly';
+
+// Styles
+import { Text } from '../../assets/reusableItens';
+import { DashboardContainer } from './styles';
+import { useThemeContext } from '../../context/themeContext';
+
+// Redux
+import { useSelector } from "react-redux"
+
+// Types
+import type { RootState } from '../../redux/store';
+
+// HOC
+import { withAuth } from '../../helper/withAuth';
+
+const Dashboard = () => {
+
   const { theme } = useThemeContext();
 
   return (
@@ -47,7 +64,11 @@ const Dashboard: NextPage = () => {
         </DashboardContainer>
       </ContainerRow>
     </>
-  );
-};
+  )
+}
+
+export const getServerSideProps = withAuth( async (ctx) => {
+  return { props: {} }
+})
 
 export default Dashboard;

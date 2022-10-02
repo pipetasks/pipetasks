@@ -1,10 +1,19 @@
+// Next
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
+
+// Styles
 import { ContainerRow } from '../../assets/containers';
+
+// Container
 import Footer from '../../components/Footer';
 import Sidebar from '../../components/Sidebar';
+
+// Context
 import { useThemeContext } from '../../context/themeContext';
+
+// HOC
+import { withAuth } from '../../helper/withAuth';
 
 const Analytics: NextPage = () => {
   const { theme } = useThemeContext();
@@ -25,5 +34,9 @@ const Analytics: NextPage = () => {
     </>
   );
 };
+
+export const getServerSideProps = withAuth( async (ctx) => {
+  return { props: {}}
+}) 
 
 export default Analytics;

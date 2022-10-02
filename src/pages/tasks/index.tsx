@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
 import Task from '../../components/TasksWeekly/Task';
+import { withAuth } from '../../helper/withAuth';
 
 interface TasksProps {}
 
@@ -141,5 +142,9 @@ const Tasks: NextPage = () => {
     </>
   );
 };
+
+export const getServerSideProps = withAuth( async (ctx) => {
+  return { props: {}}
+})
 
 export default Tasks;

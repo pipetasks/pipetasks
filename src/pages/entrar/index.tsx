@@ -1,15 +1,27 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
-import { ContainerColumn, ContainerRow } from '../../assets/containers';
+// Next
 import { Span, Text } from '../../assets/reusableItens';
+import Link from 'next/link';
+import Head from 'next/head';
 
+// Form
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+
+// Components
 import { Input } from '../../components/Input';
+
+// Types
+import type { NextPage } from 'next';
+
+// Styles
+import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import { SignInContainer, SignInContent, SignInHero } from './styles';
-import { NextPage } from 'next';
+import { ContainerColumn, ContainerRow } from '../../assets/containers';
+
+// Context
+import { useContext } from 'react';
+import { AuthenticationContext } from '../../context/AuthContext';
 
 interface FormLoginInputs {
   email: string;
@@ -25,13 +37,10 @@ const Login: NextPage = () => {
   const { register, handleSubmit, formState } = useForm<FormLoginInputs>({
     resolver: yupResolver(loginFormSchema),
   });
-
-  const { errors } = formState;
-
-  const handleSignIn: SubmitHandler<FormLoginInputs> = (
-    data: FormLoginInputs
-  ) => {
-    console.log(data);
+  const { signIn } = useContext(AuthenticationContext)
+  const { errors } = formState
+  const handleSignIn: SubmitHandler<FormLoginInputs> = async (data: FormLoginInputs) => {
+    await signIn(data)
   };
 
   return (

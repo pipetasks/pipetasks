@@ -4,6 +4,11 @@ type userValues = {
    password: string;
 }
 
+type ApiResult = {
+   token?: string;
+   message?: string 
+}
+
 const tokenRequest = async ({ email, password }: userValues) => {
    console.log(JSON.stringify({email, password}))
    try {
@@ -17,13 +22,12 @@ const tokenRequest = async ({ email, password }: userValues) => {
             password
          })
       });
-      console.log(response.status)
-      const data: { token: string } = await response.json();
-      console.log(data)
-      //if (response.status !== 200) throw new Error("Bad status code")
-      return data.token
+      const data = await response.json() as ApiResult;
+      if (response.status !== 200) throw new Error(data.message)
+      return { error: false, token: data.token };
    } catch (err) {
-      console.log(err)
+      const Error = err as Error
+      return { error: true, message: Error.message }
    }
 };
 

@@ -1,11 +1,18 @@
-import { GetServerSideProps, GetServerSidePropsContext, NextPageContext, PreviewData } from "next";
-import { destroyCookie, parseCookies } from "nookies"
-import { ParsedUrlQuery } from "querystring";
-import { userAuthentication } from "../pages/api/user/authentication"
+// Next
+import { GetServerSidePropsContext, PreviewData } from "next";
+
+// Nookies
+import { destroyCookie, parseCookies } from "nookies";
+
+// Types
+import type { ParsedUrlQuery } from "querystring";
+
+// Api
+import { userLogin } from "../pages/api/user/login"
 
 type ServerContext = GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
 
-export function withAuth(gssp: GetServerSideProps) {
+export function withAuth(gssp: any) {
    return async (context: ServerContext) => {
    const { token } = parseCookies(context);
       if (!token) {
@@ -15,7 +22,7 @@ export function withAuth(gssp: GetServerSideProps) {
             }
          };
       }
-      const user = await userAuthentication(token)
+      const user = await userLogin(token)
 
       if (!user) {
          destroyCookie(context, "token");

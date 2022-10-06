@@ -10,12 +10,11 @@ import type { IUser } from "../interface/user";
 
 // Api
 import { tokenRequest } from "../pages/api/user/token";
-import { userAuthentication } from "../pages/api/user/authentication";
+import { userLogin } from "../pages/api/user/login";
 
 // Redux Store
 import { store } from "../redux/store";
 import { setUser } from "../redux/slices/user/userSlice";
-import { withAuth } from "../helper/withAuth";
 
 type signInType = {
    email: string;
@@ -24,7 +23,16 @@ type signInType = {
 
 type AuthContextType = {
    isAuthenticated: boolean;
-   signIn: (data: signInType) => Promise<void>;
+   signIn: ({ email, password }: signInType) => Promise<{
+      data: IUser;
+      error: false;
+  } | {
+      error: boolean;
+      message: undefined;
+  } | {
+      error: boolean;
+      message: string | undefined;
+  }>
 };
 
 export const AuthenticationContext = createContext({} as AuthContextType)
@@ -42,9 +50,9 @@ const authProvider = ({ children }: Props) => {
       const autoLogin = async () => {
          try {
             setIsAuthenticated(true)
-            const response = await userAuthentication(token);
-            if (!response?.data) throw new Error("Um errou aconteceu")
-            store.dispatch(setUser(response.data)) 
+            const response = await userLogin(token);
+            if (!response.error) throw new Error("Um errou aconteceu")
+            store.dispatch(setUser(response.data!)) 
          } catch (err) {
             destroyCookie(null, "token")
          }
@@ -53,18 +61,24 @@ const authProvider = ({ children }: Props) => {
    }, [])
 
    const signIn = async ({ email, password }: signInType) => {
-      const token = await tokenRequest({ email, password });
+      const { token, error, message } = await tokenRequest({ email, password });
 
-      if (token) {
-         const response = await userAuthentication(token);
-         if (response?.data) {
+      if (!error && token) {
+         const response = await userLogin(token);
+         if (!response.error && response.data) {
             store.dispatch(setUser(response.data))
             setCookie(null, "token", token, {
                maxAge: 60 * 60 * 1, // Ten Hours
                path: "/"
             })
-            Router.push("/dashboard")
+            Router.push("/dashboard");
+            return { error: false }
+
+         } else {
+            return response
          }
+      } else {
+         return { error: true, message } 
       }
    }
    

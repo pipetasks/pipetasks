@@ -13,6 +13,7 @@ import { Input } from '../../components/Input';
 
 // Types
 import type { NextPage } from 'next';
+import type { RootState } from '../../redux/store';
 
 // Styles
 import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
@@ -20,8 +21,15 @@ import { SignInContainer, SignInContent, SignInHero } from './styles';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 
 // Context
-import { useContext } from 'react';
 import { AuthenticationContext } from '../../context/AuthContext';
+
+// React
+import { useState, useContext } from 'react';
+import { ErrorModal } from '../../components/ErrorModal/ErrorModal';
+import { useDispatch, useSelector } from 'react-redux';
+
+// Redux
+import { setError } from '../../redux/slices/error/errorSlice';
 
 interface FormLoginInputs {
   email: string;
@@ -34,13 +42,22 @@ const loginFormSchema = yup.object().shape({
 });
 
 const Login: NextPage = () => {
+
+  const dispatch = useDispatch();
+  const { error } = useSelector((state: RootState) => state.error)
+  console.log(error)
   const { register, handleSubmit, formState } = useForm<FormLoginInputs>({
     resolver: yupResolver(loginFormSchema),
   });
-  const { signIn } = useContext(AuthenticationContext)
-  const { errors } = formState
+  const { signIn } = useContext(AuthenticationContext);
+  const { errors } = formState;
   const handleSignIn: SubmitHandler<FormLoginInputs> = async (data: FormLoginInputs) => {
-    await signIn(data)
+    const result = await signIn(data);
+
+    if (result.error && result.message) {
+
+      dispatch(setError({ message: result.message }))
+    }
   };
 
   return (
@@ -55,7 +72,9 @@ const Login: NextPage = () => {
 
       <SignInContainer height="100vh" as="main">
         <SignInHero as="section" width="100%" height="100%" />
-
+        {error && (
+          <ErrorModal/>
+        )}
         <SignInContent
           width="36.375rem"
           as="section"

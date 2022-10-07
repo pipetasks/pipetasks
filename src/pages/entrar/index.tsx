@@ -45,17 +45,15 @@ const Login: NextPage = () => {
 
   const dispatch = useDispatch();
   const { error } = useSelector((state: RootState) => state.error)
-  console.log(error)
   const { register, handleSubmit, formState } = useForm<FormLoginInputs>({
     resolver: yupResolver(loginFormSchema),
   });
   const { signIn } = useContext(AuthenticationContext);
   const { errors } = formState;
+
   const handleSignIn: SubmitHandler<FormLoginInputs> = async (data: FormLoginInputs) => {
     const result = await signIn(data);
-
     if (result.error && result.message) {
-
       dispatch(setError({ message: result.message }))
     }
   };

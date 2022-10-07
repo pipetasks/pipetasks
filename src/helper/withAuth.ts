@@ -8,7 +8,7 @@ import { destroyCookie, parseCookies } from "nookies";
 import type { ParsedUrlQuery } from "querystring";
 
 // Api
-import { userLogin } from "../pages/api/user/login"
+import { validateToken } from "../pages/api/jwt/validate";
 
 type ServerContext = GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
 
@@ -22,9 +22,9 @@ export function withAuth(gssp: any) {
             }
          };
       }
-      const user = await userLogin(token)
 
-      if (!user) {
+      const user = await validateToken(token)
+      if (user.error) {
          destroyCookie(context, "token");
          return {
             redirect: {

@@ -43,21 +43,22 @@ type Props = {
 
 const authProvider = ({ children }: Props) => {   
    const [ isAuthenticated, setIsAuthenticated ] = React.useState<boolean>(false);
-
+   const { token } = parseCookies();
    useEffect(() => {
-      const { token } = parseCookies();
-
-      const autoLogin = async () => {
-         try {
-            setIsAuthenticated(true)
-            const response = await userLogin(token);
-            if (!response.error) throw new Error("Um errou aconteceu")
-            store.dispatch(setUser(response.data!)) 
-         } catch (err) {
-            destroyCookie(null, "token")
+      if (token) {
+         const autoLogin = async () => {
+            try {  
+               const response = await userLogin(token);
+               console.log(response.data)
+               if (response.error) throw new Error("Um erro aconteceu");
+               setIsAuthenticated(true)
+               store.dispatch(setUser({ data: response.data! })) 
+            } catch (err) {
+               destroyCookie(null, "token")
+            }
          }
+         autoLogin();
       }
-      autoLogin();
    }, [])
 
    const signIn = async ({ email, password }: signInType) => {
@@ -66,7 +67,7 @@ const authProvider = ({ children }: Props) => {
       if (!error && token) {
          const response = await userLogin(token);
          if (!response.error && response.data) {
-            store.dispatch(setUser(response.data))
+            store.dispatch(setUser({ data: response.data }))
             setCookie(null, "token", token, {
                maxAge: 60 * 60 * 1, // Ten Hours
                path: "/"

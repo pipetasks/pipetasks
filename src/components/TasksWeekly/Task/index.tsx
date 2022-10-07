@@ -4,13 +4,16 @@ import { Text } from '../../../assets/reusableItens';
 import { BsCalendarWeek } from 'react-icons/bs';
 import { AiOutlineComment } from 'react-icons/ai';
 import { useThemeContext } from '../../../context/themeContext';
+import { ITask } from '../../../interface/task';
+import { formatDate } from '../../../helper/formatDate';
 
 interface TaskProps {
-  title: string;
+  data: ITask
 }
 
-const Task = ({ title }: TaskProps) => {
+const Task = ({ data }: TaskProps) => {
   const { theme } = useThemeContext();
+  const { _id, descripton, finished, title, userId, createdAt } = data
 
   return (
     <ContainerRow
@@ -32,7 +35,7 @@ const Task = ({ title }: TaskProps) => {
           <ContainerRow gap="8px" align="center">
             <BsCalendarWeek fontSize="0.75rem" color={theme.colors.subtitle} />
             <Text variant="texting7" color={theme.colors.subtitle} as="p">
-              01/06/2022
+              {formatDate(createdAt)}
             </Text>
             <Text variant="texting7" color={theme.colors.subtitle} as="p">
               |

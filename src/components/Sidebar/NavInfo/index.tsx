@@ -1,11 +1,23 @@
-import { ContainerColumn, ContainerRow } from '../../../assets/containers';
+// Redux
+import { useSelector } from 'react-redux';
+
+// Components
 import { Text } from '../../../assets/reusableItens';
+import { ContainerColumn, ContainerRow } from '../../../assets/containers';
+
+// Context
 import { useThemeContext } from '../../../context/themeContext';
+
+// Types
+import type { RootState } from '../../../redux/store';
 
 interface NavInfoProps {}
 
 const NavInfo = ({}: NavInfoProps) => {
+
   const { theme } = useThemeContext();
+  const userName = useSelector((state: RootState) => state.user.userData!.name)
+
   return (
     <ContainerRow
       justify="space-between"
@@ -24,7 +36,7 @@ const NavInfo = ({}: NavInfoProps) => {
 
       <ContainerColumn align="flex-start">
         <Text variant="texting5" color={theme.colors.title} as="h2">
-          Natalia Nunes
+          {userName}
         </Text>
         <Text variant="texting7" color={theme.colors.subtitle} as="h3">
           Advogada

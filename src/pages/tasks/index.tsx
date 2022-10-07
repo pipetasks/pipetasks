@@ -1,5 +1,7 @@
-import { NextPage } from 'next';
+import { GetServerSidePropsContext, NextPage, NextPageContext } from 'next';
+import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { parseCookies } from 'nookies';
 import { useTheme } from 'styled-components';
 import { ContainerColumn, ContainerRow } from '../../assets/containers';
 import { Text } from '../../assets/reusableItens';
@@ -8,101 +10,16 @@ import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
 import Task from '../../components/TasksWeekly/Task';
 import { withAuth } from '../../helper/withAuth';
+import { ITask } from '../../interface/task';
+import { getTasks } from '../api/task/getTasks';
 
-interface TasksProps {}
+type TasksProps = {
+  tasks: { content: ITask[] | false } 
+}
 
-const Tasks: NextPage = () => {
-  const data = [
-    {
-      _id: '631c4as54d21as',
-      userId: '354412a1s54s',
-      title: 'Titulo da Task',
-      description: 'lorem ipsum task done example taks lorem ipsum feito',
-      createdAt: new Date(),
-      finished: {
-        status: false,
-        at: new Date(2022, 12, 10),
-      },
-    },
-    {
-      _id: '631c4as54d21as',
-      userId: '354412a1s54s',
-      title: 'Titulo da Task',
-      description: 'lorem ipsum task done example taks lorem ipsum feito',
-      createdAt: new Date(),
-      finished: {
-        status: false,
-        at: new Date(2022, 12, 10),
-      },
-    },
-    {
-      _id: '631c4as54d21as',
-      userId: '354412a1s54s',
-      title: 'Titulo da Task',
-      description: 'lorem ipsum task done example taks lorem ipsum feito',
-      createdAt: new Date(),
-      finished: {
-        status: false,
-        at: new Date(2022, 12, 10),
-      },
-    },
-    {
-      _id: '631c4as54d21as',
-      userId: '354412a1s54s',
-      title: 'Titulo da Task',
-      description: 'lorem ipsum task done example taks lorem ipsum feito',
-      createdAt: new Date(),
-      finished: {
-        status: false,
-        at: new Date(2022, 12, 10),
-      },
-    },
-    {
-      _id: '631c4as54d21as',
-      userId: '354412a1s54s',
-      title: 'Titulo da Task',
-      description: 'lorem ipsum task done example taks lorem ipsum feito',
-      createdAt: new Date(),
-      finished: {
-        status: false,
-        at: new Date(2022, 12, 10),
-      },
-    },
-    {
-      _id: '631c4as54d21as',
-      userId: '354412a1s54s',
-      title: 'Titulo da Task',
-      description: 'lorem ipsum task done example taks lorem ipsum feito',
-      createdAt: new Date(),
-      finished: {
-        status: false,
-        at: new Date(2022, 12, 10),
-      },
-    },
-    {
-      _id: '631c4as54d21as',
-      userId: '354412a1s54s',
-      title: 'Titulo da Task',
-      description: 'lorem ipsum task done example taks lorem ipsum feito',
-      createdAt: new Date(),
-      finished: {
-        status: false,
-        at: new Date(2022, 12, 10),
-      },
-    },
-    {
-      _id: '631c4as54d21as',
-      userId: '354412a1s54s',
-      title: 'Titulo da Task',
-      description: 'lorem ipsum task done example taks lorem ipsum feito',
-      createdAt: new Date(),
-      finished: {
-        status: false,
-        at: new Date(2022, 12, 10),
-      },
-    },
-  ];
+const Tasks = ({ tasks }: TasksProps) => {
 
+  console.log(tasks, "asdasd")
   const theme = useTheme();
   return (
     <>
@@ -133,9 +50,10 @@ const Tasks: NextPage = () => {
             <Text variant="texting3" color={theme.colors.tasks.color}>
               Suas tarefas
             </Text>
-            {data.map((task) => (
-              <Task key={task._id} title={task.title} />
+            {tasks.content && tasks.content.map((task) => (
+              <Task key={task._id} data={task} />
             ))}
+            {!tasks.content && <h1>Tarefas</h1>}
           </ContainerColumn>
         </ContainerColumn>
       </ContainerRow>
@@ -143,8 +61,12 @@ const Tasks: NextPage = () => {
   );
 };
 
-export const getServerSideProps = withAuth( async (ctx) => {
-  return { props: {}}
+export const getServerSideProps = withAuth( async (ctx: GetServerSidePropsContext) => {
+  const { token } = parseCookies(ctx);
+  const tasks = await getTasks(token);
+  return { props: {
+    tasks
+  }}
 })
 
 export default Tasks;
